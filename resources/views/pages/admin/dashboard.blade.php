@@ -10,23 +10,27 @@
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Admin Dashboard</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                  Look what you have made today!
-                                                                </p> -->
+                                                                                      Look what you have made today!
+                                                                                    </p> -->
             </div>
 
             <div class="dashboard-content">
                 <div class="row mt-5">
+
                     <div class="col-md-4">
-                        <div class="card mb-2">
-                            <div class="card-body">
-                                <div class="dashboard-card-title">
-                                    <h6>Client</h6>
-                                </div>
-                                <div class="dashboard-card-subtitle">
-                                    <h1><strong>15,209</strong></h1>
+                        <a href="{{ route('client.index') }}" class="text-decoration-none text-dark">
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    <div class="dashboard-card-title">
+                                        <h6>Client</h6>
+                                    </div>
+                                    <div class="dashboard-card-subtitle">
+                                        <h1><strong>{{ $client }}</strong></h1>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
+
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-2">
@@ -35,7 +39,7 @@
                                     <h6>Project</h6>
                                 </div>
                                 <div class="dashboard-card-subtitle">
-                                    <h1><strong>15,209</strong></h1>
+                                    <h1><strong>{{ $project }}</strong></h1>
                                 </div>
                             </div>
                         </div>

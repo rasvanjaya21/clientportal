@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,10 @@ Route::get('/register/success', 'Auth\RegisterController@success')->name('regist
 
 // ->middleware(['auth','admin'])
 
-Route::prefix('admin')->namespace('Admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->namespace('Admin')->group(function () {
     Route::get('/', 'DashboardController@index')->name('admin-dashboard');
     Route::resource('client', ClientController::class);
+    Route::resource('client.project', ProjectController::class)->shallow();
 });
 
 Auth::routes();

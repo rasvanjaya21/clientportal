@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+
+            $table->bigInteger('clients_id');
             $table->string('name');
             $table->string('jenis');
             $table->string('keterangan');
@@ -22,6 +24,7 @@ return new class extends Migration
             $table->string('status');
             $table->dateTime('masaaktif');
             $table->longText('notes');
+            $table->string('photo');
 
             $table->softDeletes();
             $table->timestamps();

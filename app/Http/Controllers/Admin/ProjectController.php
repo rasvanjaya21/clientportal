@@ -2,51 +2,43 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\Project;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Yajra\DataTables\Contracts\DataTable;
-use Yajra\DataTables\Facades\DataTables;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ProjectRequest;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Yajra\DataTables\Facades\DataTables;
 
-use App\Http\Requests\Admin\ClientRequest;
-
-class ClientController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Client $client)
     {
-
-
-
-
         if (request()->ajax()) {
-            $query = Client::query();
+            $query = Project::query();
 
 
             // $query = DB::table('clients')->get();
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
+
                     <div class="btn-group">
-                        <a href=" ' . route('client.project.index', $item->id) . ' " class="btn btn-dark mb-3 mr-3">
-                            Project
-                        </a>
+
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
                                 Aksi
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href=" ' . route('client.edit', $item->id) . ' ">
+                                <a class="dropdown-item" href=" ' . route('project.edit', $item->id) . ' ">
                                     Edit
                                 </a>
-                                <form action=" ' . route('client.destroy', $item->id) . ' " method="POST">
+                                <form action=" ' . route('project.destroy', $item->id) . ' " method="POST">
                                     ' . method_field('delete') . csrf_field() . '
                                     <button type="submit" class="dropdown-item text-danger">
                                         Delete
@@ -62,7 +54,7 @@ class ClientController extends Controller
         }
 
 
-        return view('pages.admin.client.index');
+        return view('pages.admin.project.index', compact('client'));
     }
 
     /**
@@ -70,9 +62,9 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Client $client)
     {
-        return view('pages.admin.client.create');
+        return view('pages.admin.project.create', compact('client'));
     }
 
     /**
@@ -81,13 +73,16 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ClientRequest $request)
+    public function store(ProjectRequest $request, Client $client)
     {
+
         $data = $request->all();
+        $data['clients_id'] = $client->id;
 
-        Client::create($data);
+        $data['photo'] = $request->file('photo')->store('assets/imgproject', 'public');
+        Project::create($data);
 
-        return redirect()->route('client.index');
+        return redirect()->route('client.project.index', $client->id);
     }
 
     /**
@@ -107,11 +102,11 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        $item = Client::findOrFail($id);
+        $item = $project;
 
-        return view('pages.admin.client.edit', [
+        return view('pages.admin.project.edit', [
             'item' => $item
         ]);
     }
@@ -123,15 +118,15 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ClientRequest $request, $id)
+    public function update(ProjectRequest $request, Project $project)
     {
         $data = $request->all();
 
-        $item = Client::findOrFail($id);
+        $item = $project;
 
         $item->update($data);
 
-        return redirect()->route('client.index');
+        return redirect()->route('client.project.index', $project->clients_id);
     }
 
     /**
@@ -140,10 +135,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        $item = Client::findOrFail($id);
-        $item->delete();
-        return redirect()->route('client.index');
+        $project->delete();
+        return redirect()->route('client.project.index', $project->clients_id);
     }
 }

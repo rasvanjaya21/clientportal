@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
         ]);
     }
 
@@ -64,14 +65,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $data['roles'] = strval('ADMIN');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'roles' => $data['email'] == 'akmalfaditya@gmail.com' ? strval('ADMIN') : strval('USER'),
         ]);
     }
 
-    public function success(){
+    public function success()
+    {
         return view('auth.success');
     }
 }

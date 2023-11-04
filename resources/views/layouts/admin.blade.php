@@ -36,8 +36,17 @@
                   class="list-group-item list-group-item-action"
                   >Transactions</a
                 > -->
-                    <a href="/dashboard-settings.html" class="list-group-item list-group-item-action">User</a>
-                    <a href="/index.html" class="list-group-item list-group-item-action">Sign Out</a>
+                    {{-- <a href="/dashboard-settings.html" class="list-group-item list-group-item-action">User</a> --}}
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"
+                        class="list-group-item list-group-item-action">
+                        Sign Out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -101,9 +110,7 @@
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/v/bs4/dt-1.13.6/datatables.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/script/popper.js"></script>
-    <script src="/script/main.js"></script>
+
     <script>
         AOS.init();
     </script>
