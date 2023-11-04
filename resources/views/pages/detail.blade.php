@@ -474,27 +474,29 @@
             <div class="app pt-5">
 
                 <div class="col-md-10 col-lg-12 m-auto p-0">
-                    <h1 class="h2 font-title-comments">Client: Comments Layout</h1>
-                    <p class="lead mb-3 font-subtitle-comments">A comments for projects</p>
+                    <h1 class="h2 font-title-comments">Comments</h1>
+                    <p class="lead mb-3 font-subtitle-comments">Comments for projects</p>
                     <hr>
-                    <div class="pt-1 mb-5">
+                    @comments(['model' => $client])
+
+                    {{-- <div class="pt-1 mb-5">
 
                         <div class="d-flex mb-5 align-items-center">
                             <div class="mr-3">8 Comments</div>
                             <!-- <div class="dropdown">
-                                                                                                                        <button class="ml-3 sort-btn btn btn-secondary d-flex align-items-center py-1 px-2"
-                                                                                                                          data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                                                                                                                          <span class="ski" style="font-size:1.5em;"><svg aria-hidden="true" class="svg-icon"
-                                                                                                                              xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 -960 960 960">
-                                                                                                                              <path d="M120-240v-60h240v60H120Zm0-210v-60h480v60H120Zm0-210v-60h720v60H120Z"></path>
-                                                                                                                            </svg></span>
-                                                                                                                          <span>Sort by</span>
-                                                                                                                        </button>
-                                                                                                                        <div class="dropdown-menu mt-1">
-                                                                                                                          <div><a class="dropdown-item" href="#">Top comments</a></div>
-                                                                                                                          <div><a class="dropdown-item" href="#">Newest first</a></div>
-                                                                                                                        </div>
-                                                                                                                      </div> -->
+                                                                                                                            <button class="ml-3 sort-btn btn btn-secondary d-flex align-items-center py-1 px-2"
+                                                                                                                              data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                                                                                                              <span class="ski" style="font-size:1.5em;"><svg aria-hidden="true" class="svg-icon"
+                                                                                                                                  xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 -960 960 960">
+                                                                                                                                  <path d="M120-240v-60h240v60H120Zm0-210v-60h480v60H120Zm0-210v-60h720v60H120Z"></path>
+                                                                                                                                </svg></span>
+                                                                                                                              <span>Sort by</span>
+                                                                                                                            </button>
+                                                                                                                            <div class="dropdown-menu mt-1">
+                                                                                                                              <div><a class="dropdown-item" href="#">Top comments</a></div>
+                                                                                                                              <div><a class="dropdown-item" href="#">Newest first</a></div>
+                                                                                                                            </div>
+                                                                                                                          </div> -->
                         </div>
 
                         <!-- Comment #1 //-->
@@ -578,7 +580,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>
