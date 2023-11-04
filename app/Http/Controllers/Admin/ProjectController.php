@@ -20,7 +20,7 @@ class ProjectController extends Controller
     public function index(Client $client)
     {
         if (request()->ajax()) {
-            $query = Project::query();
+            $query = Project::query()->where('clients_id', $client->id);
 
 
             // $query = DB::table('clients')->get();

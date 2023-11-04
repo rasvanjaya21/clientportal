@@ -9,7 +9,7 @@
     <div class="page-content page-details">
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        {{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -52,8 +52,50 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
+
+        @foreach ($client->projects as $project)
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter{{ $project->id }}" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">{{ $project->name }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-text"><strong>Jenis:</strong> <span
+                                                id="keterangan">{{ $project->jenis }}</span></p>
+                                        <p class="card-text"><strong>Keterangan:</strong> <span
+                                                id="keterangan">{{ $project->keterangan }}</span></p>
+                                        <p class="card-text"><strong>Deadline:</strong> <span
+                                                id="deadline">{{ $project->deadline }}</span></p>
+                                        <p class="card-text"><strong>Status:</strong> <span
+                                                id="status">{{ $project->status }}</span>
+                                        </p>
+                                        <p class="card-text"><strong>Masa Aktif:</strong> <span
+                                                id="masaAktif">{{ $project->masaaktif }}</span></p>
+                                        <p class="card-text"><strong>Notes:</strong> <span
+                                                id="masaAktif">{{ $project->notes }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
         <div class="store-details-container" data-aos="fade-up">
             <section class="store-heading">
                 <div class="container">
@@ -61,7 +103,7 @@
                         <div class="d-flex flex-row justify-content-between p-card-1 bg-light">
                             <div class="mobile-card-1 p-2 d-flex justify-content-center align-items-center">
                                 <div>
-                                    <h2 class="h2-contact">Halo Mr Smith</h2>
+                                    <h2 class="h2-contact">Halo {{ $client->name }}</h2>
                                     <p class="p-contact mb-3">
                                         Selamat datang di Client Portal Webcare Indonesia
                                     </p>
@@ -86,7 +128,7 @@
                                 <p class="font-project text-white h3">Number of Projects</p>
                             </div>
                             <div class="section-2-card-2 d-flex justify-content-center align-items-center">
-                                <p class="font-number text-white h3">3</p>
+                                <p class="font-number text-white h3">{{ $projecttotal }}</p>
                             </div>
                         </div>
                     </div>
@@ -96,8 +138,77 @@
             <section>
                 <div class="container">
 
+                    @foreach ($client->projects as $project)
+                        <div
+                            class="mt-4  {{ $random = rand(1, 4) }}  {{ $random == 1 ? 'bg-primary' : '' }} {{ $random == 2 ? 'bg-danger' : '' }} {{ $random == 3 ? 'bg-dark' : '' }} {{ $random == 4 ? 'bg-warning' : '' }} p-lg-3 text-white radius-client-project">
 
-                    <div class="mt-4 bg-primary p-lg-3 text-white radius-client-project">
+                            <div class="d-flex w-100">
+                                <div class="section-description-1 p-2 d-flex justify-content-center align-items-center">
+                                    <img class="img-client" height="250px" width="200" style="object-fit: contain;"
+                                        src="{{ Storage::url($project->photo) }}" alt="">
+                                </div>
+                                <div class="section-description-2 d-flex justify-content-start align-items-center">
+                                    <div class="section-2-card-2">
+                                        <p class="font-title-project text-white">
+                                            {{ $project->name }}
+                                        </p>
+                                        <p class="font-subtitle-project">
+                                            {{ $project->jenis }}
+                                        </p>
+
+                                        <div class="time d-flex justify-content-start align-items-center">
+                                            <div class="time d-flex justify-content-start align-items-center">
+                                                <svg class="svg-clock" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                                    viewBox="0 0 512 512">
+                                                    <style>
+                                                        svg {
+                                                            fill: #ffffff;
+                                                        }
+                                                    </style>
+                                                    <path
+                                                        d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                                                </svg>
+                                                <p class="p-deadline ml-1 text-white my-auto">
+                                                    {{ $project->deadline }}
+                                                </p>
+                                            </div>
+                                            <div class="ml-3 d-flex justify-content-start align-items-center">
+                                                <svg class="svg-clock" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                                    viewBox="0 0 512 512">
+                                                    <style>
+                                                        svg {
+                                                            fill: #ffffff;
+                                                        }
+                                                    </style>
+                                                    <path
+                                                        d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                                                </svg>
+                                                <p class="p-status ml-1 text-white my-auto">
+                                                    {{ $project->status }} </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="btn-details-mobile ">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button"
+                                                        class="my-2 d-flex btn-details float-left mx-auto btn btn-light"
+                                                        data-toggle="modal"
+                                                        data-target="#exampleModalCenter{{ $project->id }}">Detail
+                                                        Project</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="mt-4  bg-primary p-lg-3 text-white radius-client-project">
 
                         <div class="d-flex w-100">
                             <div class="section-description-1 p-2 d-flex justify-content-center align-items-center">
@@ -161,9 +272,9 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="mt-4 bg-danger p-lg-3 text-white radius-client-project">
+                    {{-- <div class="mt-4 bg-danger p-lg-3 text-white radius-client-project">
                         <div class="d-flex w-100">
                             <div class="section-description-1 p-2 d-flex justify-content-center align-items-center">
                                 <img class="img-client" src="/images/portal-client/project-client.png" alt="">
@@ -224,9 +335,9 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="mt-4 bg-dark p-lg-3 text-white radius-client-project">
+                    {{-- <div class="mt-4 bg-dark p-lg-3 text-white radius-client-project">
                         <div class="d-flex w-100">
                             <div class="section-description-1 p-2 d-flex justify-content-center align-items-center">
                                 <img class="img-client" src="/images/portal-client/project-client.png" alt="">
@@ -286,9 +397,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="mt-4 bg-warning p-lg-3 text-white radius-client-project">
+                    {{-- <div class="mt-4 bg-warning p-lg-3 text-white radius-client-project">
                         <div class="d-flex w-100">
                             <div class="section-description-1 p-2 d-flex justify-content-center align-items-center">
                                 <img class="img-client" src="/images/portal-client/project-client.png" alt="">
@@ -350,7 +461,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -371,19 +482,19 @@
                         <div class="d-flex mb-5 align-items-center">
                             <div class="mr-3">8 Comments</div>
                             <!-- <div class="dropdown">
-                                    <button class="ml-3 sort-btn btn btn-secondary d-flex align-items-center py-1 px-2"
-                                      data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                                      <span class="ski" style="font-size:1.5em;"><svg aria-hidden="true" class="svg-icon"
-                                          xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 -960 960 960">
-                                          <path d="M120-240v-60h240v60H120Zm0-210v-60h480v60H120Zm0-210v-60h720v60H120Z"></path>
-                                        </svg></span>
-                                      <span>Sort by</span>
-                                    </button>
-                                    <div class="dropdown-menu mt-1">
-                                      <div><a class="dropdown-item" href="#">Top comments</a></div>
-                                      <div><a class="dropdown-item" href="#">Newest first</a></div>
-                                    </div>
-                                  </div> -->
+                                                                                                                        <button class="ml-3 sort-btn btn btn-secondary d-flex align-items-center py-1 px-2"
+                                                                                                                          data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                                                                                                          <span class="ski" style="font-size:1.5em;"><svg aria-hidden="true" class="svg-icon"
+                                                                                                                              xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 -960 960 960">
+                                                                                                                              <path d="M120-240v-60h240v60H120Zm0-210v-60h480v60H120Zm0-210v-60h720v60H120Z"></path>
+                                                                                                                            </svg></span>
+                                                                                                                          <span>Sort by</span>
+                                                                                                                        </button>
+                                                                                                                        <div class="dropdown-menu mt-1">
+                                                                                                                          <div><a class="dropdown-item" href="#">Top comments</a></div>
+                                                                                                                          <div><a class="dropdown-item" href="#">Newest first</a></div>
+                                                                                                                        </div>
+                                                                                                                      </div> -->
                         </div>
 
                         <!-- Comment #1 //-->
