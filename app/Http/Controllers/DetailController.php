@@ -18,6 +18,14 @@ class DetailController extends Controller
     {
         $client = Client::with(['projects'])->where('slug', $id)->firstOrFail();
         $project = Project::all()->where('clients_id', $client->id)->count();
+
+        $data = $request->password;
+        if ($data != $client->password) {
+            return view('pages.detailsubmit', [
+                'client' => $client,
+                'projecttotal' => $project
+            ]);
+        }
         return view('pages.detail', [
             'client' => $client,
             'projecttotal' => $project

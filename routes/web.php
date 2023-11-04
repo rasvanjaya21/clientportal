@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/details/{id}', 'DetailController@index')->name('detail');
+Route::post('/details/{id}', 'DetailController@index')->name('detail');
+
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/register/success', 'Auth\RegisterController@success')->name('register-success');
