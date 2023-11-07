@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\Project;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Yajra\DataTables\Contracts\DataTable;
-use Yajra\DataTables\Facades\DataTables;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Yajra\DataTables\Facades\DataTables;
 
+use Yajra\DataTables\Contracts\DataTable;
 use App\Http\Requests\Admin\ClientRequest;
 
 class ClientController extends Controller
@@ -143,7 +144,9 @@ class ClientController extends Controller
     public function destroy($id)
     {
         $item = Client::findOrFail($id);
+        $project = Project::where('clients_id', $id);
         $item->delete();
+        $project->delete();
         return redirect()->route('client.index');
     }
 }

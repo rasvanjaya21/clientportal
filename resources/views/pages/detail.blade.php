@@ -107,11 +107,11 @@
                                     <p class="p-contact mb-3">
                                         Selamat datang di Client Portal Webcare Indonesia
                                     </p>
-                                    <button type="button" class="btn-contact btn btn-primary py-2 px-lg-3">
-                                        <a href="" class="text-white font-contact">
-                                            Contact Admin
-                                        </a>
-                                    </button>
+                                    <a href="/details/comments/{{ $client->slug }}"
+                                        class="text-white font-contact btn-contact btn btn-primary py-2 px-lg-3">
+                                        Comments
+                                    </a>
+
                                 </div>
                             </div>
 

@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Cookie;
 
-class DetailController extends Controller
+class DetailCommentController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -23,14 +23,14 @@ class DetailController extends Controller
         $data = $request->password;
 
 
-        if ($data != $client->password) {
-            return view('pages.detailsubmit', [
-                'client' => $client,
-                'projecttotal' => $project,
-            ]);
-        }
+        // if ($data != $client->password) {
+        //     return view('pages.detailsubmit', [
+        //         'client' => $client,
+        //         'projecttotal' => $project,
+        //     ]);
+        // }
 
-        return view('pages.detail', [
+        return view('pages.detailcomment', [
             'client' => $client,
             'projecttotal' => $project,
 
