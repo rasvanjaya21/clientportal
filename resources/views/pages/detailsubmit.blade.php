@@ -7,11 +7,6 @@
 @section('content')
     <!-- Page Content -->
     <div class="page-content page-details">
-
-
-
-
-
         <div class="store-details-container" data-aos="fade-up">
             <section class="store-heading">
                 <div class="container">
@@ -24,6 +19,11 @@
                                     <p class="p-contact mb-3">
                                         Tolong masukkan password yang sudah diberikan admin
                                     </p>
+                                    @if (session('error'))
+                                        <div class="alert alert-danger">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
 
                                     <form action="/details/{{ $client->slug }}" method="POST"
                                         enctype="multipart/form-data">
@@ -49,8 +49,6 @@
 
                                 </div>
                             </div>
-
-
                         </div>
 
                         <div class="d-flex flex-row justify-content-between p-card-2 bg-primary">

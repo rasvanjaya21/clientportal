@@ -23,11 +23,34 @@ class DetailController extends Controller
         $data = $request->password;
 
 
-        if ($data != $client->password) {
-            return view('pages.detailsubmit', [
-                'client' => $client,
-                'projecttotal' => $project,
-            ]);
+        // if ($data != $client->password) {
+        //     return view('pages.detailsubmit', [
+        //         'client' => $client,
+        //         'projecttotal' => $project,
+        //     ]);
+        // }
+
+
+
+        // Cek apakah pengguna sudah memasukkan password dengan benar sebelumnya
+        if ($request->session()->get('client_authenticated') != $client->id) {
+            $data = $request->password;
+
+            if ($data != $client->password) {
+                // Jika password salah, kembalikan ke halaman input password
+                if ($request->isMethod('post')) {
+                    $request->session()->flash('error', 'Password salah, silakan coba lagi.');
+                }
+
+
+                return view('pages.detailsubmit', [
+                    'client' => $client,
+                    'projecttotal' => $project,
+                ]);
+            }
+
+            // Jika password benar, simpan status login ke session
+            $request->session()->put('client_authenticated', $client->id);
         }
 
         return view('pages.detail', [

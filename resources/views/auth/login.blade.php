@@ -76,7 +76,7 @@
 </div> --}}
 
     <!-- Page Content -->
-    <div class="page-content page-auth" style="margin: 100px">
+    {{-- <div class="page-content page-auth" style="margin: 100px">
         <div class="section-store-auth" data-aos="fade-up">
             <div class="container">
                 <div class="row align-items-center row-login">
@@ -123,6 +123,57 @@
                             </a>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <!-- Page Content Responsive -->
+    <div class="page-content page-auth pt-5 pb-5">
+        <div class="section-store-auth" data-aos="fade-up">
+            <div class="container">
+                <div class="row align-items-center row-login justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+                        <img src="/images/logo-dashboard.png" alt="" class="img-fluid mb-4 mb-lg-0" />
+                    </div>
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-4">
+                        <h2 class="text-center text-lg-left">
+                            Webcare Portal Client <br />
+                            Login Admin
+                        </h2>
+                        <form method="POST" action="{{ route('login') }}" class="mt-3">
+                            @csrf
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    autocomplete="current-password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block mt-4">
+                                Sign In
+                            </button>
+                            <a class="btn btn-outline-secondary btn-block mt-2" href="{{ route('register') }}">
+                                Sign Up
+                            </a>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>

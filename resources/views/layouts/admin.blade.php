@@ -25,8 +25,11 @@
                 <div class="sidebar-heading d-flex align-items-center">
                     <img src="/images/logo-dashboard.png" alt="" class="my-4 width-logo" />
                     <p class="ml-1 my-0 title-dashboard">Dashboard</p>
+
+
                 </div>
                 <div class="list-group list-group-flush">
+                    
                     <a href="{{ route('admin-dashboard') }}"
                         class="list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : '' }}">Dashboard</a>
                     <a href="{{ route('client.index') }}"
@@ -104,6 +107,9 @@
             <!-- /#page-content-wrapper -->
         </div>
     </div>
+
+
+
     <!-- Bootstrap core JavaScript -->
     @stack('prepend-script')
     <script src="/vendor/jquery/jquery.min.js"></script>
