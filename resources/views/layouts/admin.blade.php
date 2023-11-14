@@ -8,6 +8,7 @@
     <meta name="author" content="" />
 
     <title>@yield('title')</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
     @stack('prepend-style')
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -23,13 +24,13 @@
             <!-- Sidebar -->
             <div class="border-right" id="sidebar-wrapper">
                 <div class="sidebar-heading d-flex align-items-center">
-                    <img src="/images/logo-dashboard.png" alt="" class="my-4 width-logo" />
+                    <img src="/images/logo-dashboard.jpeg" alt="" class="my-4 width-logo" />
                     <p class="ml-1 my-0 title-dashboard">Dashboard</p>
 
 
                 </div>
                 <div class="list-group list-group-flush">
-                    
+
                     <a href="{{ route('admin-dashboard') }}"
                         class="list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : '' }}">Dashboard</a>
                     <a href="{{ route('client.index') }}"

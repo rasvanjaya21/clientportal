@@ -134,7 +134,7 @@
             <div class="container">
                 <div class="row align-items-center row-login justify-content-center">
                     <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
-                        <img src="/images/logo-dashboard.png" alt="" class="img-fluid mb-4 mb-lg-0" />
+                        <img src="/images/logo-dashboard.jpeg" alt="" class="img-fluid mb-4 mb-lg-0" />
                     </div>
                     <div class="col-12 col-sm-10 col-md-8 col-lg-4">
                         <h2 class="text-center text-lg-left">

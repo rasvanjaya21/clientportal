@@ -8,6 +8,7 @@
     <meta name="author" content="" />
 
     <title>@yield('title')</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
     {{-- Style --}}
     @stack('prepend-style')
