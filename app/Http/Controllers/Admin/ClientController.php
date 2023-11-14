@@ -47,6 +47,7 @@ class ClientController extends Controller
                                 <a class="dropdown-item" href=" ' . route('client.edit', $item->id) . ' ">
                                     Edit
                                 </a>
+                                <a class="dropdown-item" href="/details/' . $item->slug . '"target="_blank">View</a>
                                 <form action=" ' . route('client.destroy', $item->id) . ' " method="POST">
                                     ' . method_field('delete') . csrf_field() . '
                                     <button type="submit" class="dropdown-item text-danger">

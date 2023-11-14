@@ -76,12 +76,14 @@
                                         <p class="card-text"><strong>Keterangan:</strong> <span
                                                 id="keterangan">{{ $project->keterangan }}</span></p>
                                         <p class="card-text"><strong>Deadline:</strong> <span
-                                                id="deadline">{{ $project->deadline }}</span></p>
+                                                id="deadline">{{ \Carbon\Carbon::parse($project->deadline)->toFormattedDateString() }}</span>
+                                        </p>
                                         <p class="card-text"><strong>Status:</strong> <span
                                                 id="status">{{ $project->status }}</span>
                                         </p>
                                         <p class="card-text"><strong>Masa Aktif:</strong> <span
-                                                id="masaAktif">{{ $project->masaaktif }}</span></p>
+                                                id="masaAktif">{{ \Carbon\Carbon::parse($project->masaaktif)->toFormattedDateString() }}</span>
+                                        </p>
                                         <p class="card-text"><strong>Notes:</strong> <span
                                                 id="masaAktif">{{ $project->notes }}</span>
                                         </p>
@@ -169,7 +171,7 @@
                                                         d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
                                                 </svg>
                                                 <p class="p-deadline ml-1 text-white my-auto">
-                                                    {{ $project->deadline }}
+                                                    {{ \Carbon\Carbon::parse($project->deadline)->toFormattedDateString() }}
                                                 </p>
                                             </div>
                                             <div class="ml-3 d-flex justify-content-start align-items-center">

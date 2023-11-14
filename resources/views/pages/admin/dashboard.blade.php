@@ -6,13 +6,15 @@
 
 @section('content')
     <div class="section-content section-dashboard-home" data-aos="fade-up">
+
+
         <div class="container-fluid">
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Admin Dashboard</h2>
 
                 <!-- <p class="dashboard-subtitle">
-                                                                                              Look what you have made today!
-                                                                                            </p> -->
+                                                                                                                                                                                                                  Look what you have made today!
+                                                                                                                                                                                                                </p> -->
             </div>
 
             <div class="dashboard-content">
@@ -58,6 +60,72 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="row mt-5">
+
+                    <div class="col-md-6">
+                        <div class="card shadow-sm rounded bg-white mb-3">
+                            <div class="card-title border-bottom p-3">
+                                <h6 class="m-0">Recent Notifications</h6>
+                            </div>
+                            <div class="card-body p-0">
+
+                                @foreach ($recentnoti as $noti)
+                                    <div class="p-3 d-flex align-items-center border-bottom">
+
+                                        <div class="font-weight-bold mr-3">
+                                            <div class="text-truncate">{{ $noti->guest_name }} has commented on
+                                                {{ $noti->name }}
+                                                project</div>
+                                            <div class="small">{{ $noti->comment }}</div>
+                                            <a href="/details/{{ $noti->slug }}" target="_blank"
+                                                class="btn btn-outline-success btn-sm mt-2">View Comment</a>
+                                        </div>
+                                        <span class="ml-auto mb-auto">
+
+                                            <div class="text-right text-muted pt-1">
+                                                {{ \Carbon\Carbon::parse($noti->created_at)->diffForHumans() }}
+                                            </div>
+                                        </span>
+                                    </div>
+                                @endforeach
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card shadow-sm rounded bg-white mb-3">
+                            <div class="card-title border-bottom p-3">
+                                <h6 class="m-0">Recent Clients</h6>
+                            </div>
+                            <div class="card-body p-0">
+
+                                @foreach ($recentclient as $recentclients)
+                                    <div class="p-3 d-flex align-items-center bg-white border-bottom osahan-post-header">
+
+                                        <div class="font-weight-bold mr-3">
+                                            <div class="text-truncate">{{ $recentclients->name }}</div>
+                                            <div class="small">Slug : <a href="/details/{{ $recentclients->slug }}"
+                                                    target="_blank">{{ $recentclients->slug }}</a></div>
+                                            <div class="small">Password : {{ $recentclients->password }}</div>
+                                        </div>
+                                        <span class="ml-auto mb-auto">
+
+                                            <div class="text-right text-muted pt-1">
+                                                {{ $recentclients->created_at->diffForHumans() }}</div>
+                                        </span>
+                                    </div>
+                                @endforeach
+
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </div>
 
