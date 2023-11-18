@@ -22,7 +22,7 @@
     <div class="page-dashboard">
         <div class="d-flex" id="wrapper" data-aos="fade-right">
             <!-- Sidebar -->
-            <div class="border-right" id="sidebar-wrapper">
+            <div class="border-right p-3" id="sidebar-wrapper">
                 <div class="sidebar-heading d-flex align-items-center">
                     <img src="/images/logo-dashboard.jpeg" alt="" class="my-4 width-logo" />
                     <p class="ml-1 my-0 title-dashboard">Dashboard</p>
@@ -32,20 +32,46 @@
                 <div class="list-group list-group-flush">
 
                     <a href="{{ route('admin-dashboard') }}"
-                        class="list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : '' }}">Dashboard</a>
+                        class="mt-3 list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : '' }}"
+                        style="border-radius: 10px;">
+
+                        Dashboard
+                    </a>
                     <a href="{{ route('client.index') }}"
-                        class="list-group-item list-group-item-action {{ request()->is('admin/client*') ? 'active' : '' }}">Client</a>
-                    <!-- <a
-                  href="/dashboard-transactions.html"
-                  class="list-group-item list-group-item-action"
-                  >Transactions</a
-                > -->
-                    {{-- <a href="/dashboard-settings.html" class="list-group-item list-group-item-action">User</a> --}}
+                        class="mt-3 list-group-item list-group-item-action {{ request()->is('admin/client*') ? 'active' : '' }}"
+                        style="border-radius: 10px;">
+
+                        Client
+                    </a>
+
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
-                        class="list-group-item list-group-item-action">
+                        class="mt-3 list-group-item list-group-item-action">
                         Sign Out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+                </div>
+
+                <div class="list-group list-group-flush" style="margin-top: 30vh;">
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"
+                        class="mt-3 list-group-item list-group-item-action" style="border-radius: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <style>
+                                svg {
+                                    fill: #c5c7c9
+                                }
+                            </style>
+                            <path
+                                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                        </svg>
+                        Sign Out
+
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
