@@ -25,7 +25,7 @@ Route::post('/details/{id}', 'DetailController@index')->name('detail');
 
 Route::get('/details/comments/{id}', 'DetailCommentController@index')->name('detail-comments');
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+// Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/register/success', 'Auth\RegisterController@success')->name('register-success');
 
