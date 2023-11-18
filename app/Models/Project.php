@@ -16,6 +16,7 @@ class Project extends Model
     protected $fillable = [
         'clients_id', 'name', 'jenis', 'keterangan', 'deadline',
         'status',
+        'progress',
         'masaaktif', 'notes',
         'photo',
     ];

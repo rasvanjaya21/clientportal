@@ -11,8 +11,8 @@
                 <h2 class="dashboard-title font-weight-bolder">Client &raquo; {{ $client->name }} &raquo; Projects &raquo;
                     Add New Projects </h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                                                                                                                              Look what you have made today!
-                                                                                                                                                                                                                                                                                                                            </p> -->
+                                                                                                                                                                                                                                                                                                                                                                      Look what you have made today!
+                                                                                                                                                                                                                                                                                                                                                                    </p> -->
             </div>
 
             <div class="dashboard-content">
@@ -69,20 +69,23 @@
                                             <div class="form-group">
                                                 <label>Status</label>
                                                 <select class="form-control" name="status" required>
-                                                    <option value="Progress">Progress
-                                                    </option>
-                                                    <option value="Progress Revisi">Progress Revisi
-                                                    </option>
-                                                    <option value="25%">25%</option>
-                                                    <option value="50%">50%
-                                                    </option>
-                                                    <option value="75%">75%</option>
-                                                    <option value="Selesai">Selesai</option>
-                                                    <option value="" disabled selected>Status</option>
+                                                    <option value="" disabled selected> PILIH STATUS </option>
+                                                    <option value="On Progress">On Progress</option>
+                                                    <option value="On Revision">On Revision</option>
+                                                    <option value="Done">Done</option>
                                                 </select>
-
                                             </div>
 
+                                            <div class="form-group">
+                                                <label>Progress</label>
+                                                <div class="input-group">
+                                                    <input type="number" name="progress" class="form-control" required
+                                                        min="1" max="100">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 <label>Masa Aktif</label>
                                                 <input type="datetime-local" name="masaaktif" class="form-control" required>

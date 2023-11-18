@@ -29,6 +29,7 @@ class ProjectRequest extends FormRequest
             'keterangan' => 'required|string',
             'deadline' => 'required',
             'status' => 'required|string',
+            'progress' => 'required|integer',
             'masaaktif' => 'required',
             'notes' => 'required|string',
             'photo' => 'required|image',

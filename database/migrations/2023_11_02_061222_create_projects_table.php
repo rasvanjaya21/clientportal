@@ -22,9 +22,10 @@ return new class extends Migration
             $table->string('keterangan');
             $table->dateTime('deadline');
             $table->string('status');
+            $table->bigInteger('progress');
             $table->dateTime('masaaktif');
             $table->longText('notes');
-            $table->string('photo');
+            $table->longText('photo');
 
             $table->softDeletes();
             $table->timestamps();
