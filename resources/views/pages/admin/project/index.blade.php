@@ -10,8 +10,8 @@
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Client &raquo; {{ $client->name }} &raquo; Projects</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                              Look what you have made today!
-                                                                                                                                                            </p> -->
+                                                                                                                                                                  Look what you have made today!
+                                                                                                                                                                </p> -->
             </div>
 
             <div class="dashboard-content">
@@ -30,6 +30,7 @@
                                                 <th>Project</th>
                                                 <th>Jenis Project</th>
                                                 <th>Deadline</th>
+                                                <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -71,6 +72,10 @@
                 {
                     data: 'deadline',
                     name: 'deadline'
+                },
+                {
+                    data: 'status',
+                    name: 'status'
                 },
                 {
                     data: 'action',
