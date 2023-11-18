@@ -6,18 +6,18 @@
 
 @section('content')
     <div class="section-content section-dashboard-home" data-aos="fade-up">
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Client Admin Dashboard</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                              Look what you have made today!
-                                                                                                                                                            </p> -->
+                                                                                                                                                                              Look what you have made today!
+                                                                                                                                                                            </p> -->
             </div>
 
-            <div class="dashboard-content">
+            <div class="dashboard-content mt-4">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card border-0 p-3" style="border-radius: 20px;">
                             <div class="card-body">
                                 <a href="{{ route('client.create') }}" class="btn btn-primary mb-3">
                                     + Tambah Klien Baru

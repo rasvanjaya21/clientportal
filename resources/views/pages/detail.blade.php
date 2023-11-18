@@ -60,8 +60,8 @@
             <div class="modal fade" id="exampleModalCenter{{ $project->id }}" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
+                    <div class="modal-content p-3" style="border-radius: 20px;">
+                        <div class="modal-header border-0">
                             <h5 class="modal-title" id="exampleModalCenterTitle">{{ $project->name }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="container">
-                                <div class="card">
+                                <div class="card" style="border-radius: 20px;">
                                     <div class="card-body">
                                         <p class="card-text"><strong>Jenis:</strong> <span
                                                 id="keterangan">{{ $project->jenis }}</span></p>
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer border-0">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>

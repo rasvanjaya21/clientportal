@@ -10,14 +10,14 @@
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Client &raquo; {{ $client->name }} &raquo; Projects</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                          Look what you have made today!
-                                                                                                                                                                        </p> -->
+                                                                                                                                                                                              Look what you have made today!
+                                                                                                                                                                                            </p> -->
             </div>
 
-            <div class="dashboard-content">
+            <div class="dashboard-content mt-4">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card border-0 p-3" style="border-radius: 20px;">
                             <div class="card-body">
                                 <a href="{{ route('client.project.create', $client->id) }}" class="btn btn-primary mb-3">
                                     + Tambah Project Baru

@@ -13,67 +13,71 @@
                 <h2 class="dashboard-title font-weight-bolder">Admin Dashboard</h2>
 
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                  Look what you have made today!
-                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                              Look what you have made today!
+                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
             </div>
 
-            <div class="dashboard-content">
-                <div class="row mt-5">
+            <div class="dashboard-content mt-4">
+                <div class="card col-12 p-3 border-0" style="border-radius: 20px;">
+                    <div class="row">
 
-                    <div class="col-md-4">
-                        <a href="{{ route('client.index') }}" class="text-decoration-none text-dark">
-                            <div class="card mb-2">
+                        <div class="col-md-4 ">
+                            <a href="{{ route('client.index') }}" class="text-decoration-none text-dark">
+                                <div class="card border-0">
+                                    <div class="card-body">
+                                        <div class="dashboard-card-title">
+                                            <h6>Client</h6>
+                                        </div>
+                                        <div class="dashboard-card-subtitle">
+                                            <h1><strong>{{ $client }}</strong></h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <div class="card border-0">
                                 <div class="card-body">
                                     <div class="dashboard-card-title">
-                                        <h6>Client</h6>
+                                        <h6>Project</h6>
                                     </div>
                                     <div class="dashboard-card-subtitle">
-                                        <h1><strong>{{ $client }}</strong></h1>
+                                        <h1><strong>{{ $project }}</strong></h1>
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-2">
-                            <div class="card-body">
-                                <div class="dashboard-card-title">
-                                    <h6>Project</h6>
-                                </div>
-                                <div class="dashboard-card-subtitle">
-                                    <h1><strong>{{ $project }}</strong></h1>
+                        <div class="col-md-4 ">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <div class="dashboard-card-title">
+                                        <h6>Admin</h6>
+                                    </div>
+                                    <div class="dashboard-card-subtitle">
+                                        <h1><strong>{{ $admin }}</strong></h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="card mb-2">
-                            <div class="card-body">
-                                <div class="dashboard-card-title">
-                                    <h6>Admin</h6>
-                                </div>
-                                <div class="dashboard-card-subtitle">
-                                    <h1><strong>{{ $admin }}</strong></h1>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
 
-                <div class="row mt-5">
+
+                <div class="row mt-4">
 
                     <div class="col-md-6">
-                        <div class="card shadow-sm rounded bg-white mb-3">
-                            <div class="card-title border-bottom p-3">
-                                <h6 class="m-0">Recent Notifications</h6>
+                        <div class="card shadow-sm bg-white mb-3 border-0 p-3" style="border-radius: 20px;">
+                            <div class="card-title border-0 p-3">
+                                <h6 class="m-0">Notifications</h6>
                             </div>
                             <div class="card-body p-0">
 
                                 @foreach ($recentnoti as $noti)
-                                    <div class="p-3 d-flex align-items-center border-bottom">
+                                    <div class="p-3 d-flex align-items-center border-0">
 
                                         <div class="font-weight-bold mr-3">
                                             <div class="text-truncate">{{ $noti->guest_name }} has commented on
@@ -98,14 +102,14 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="card shadow-sm rounded bg-white mb-3">
-                            <div class="card-title border-bottom p-3">
+                        <div class="card shadow-sm bg-white mb-3 border-0 p-3" style="border-radius: 20px;">
+                            <div class="card-title border-0 p-3">
                                 <h6 class="m-0">Recent Clients</h6>
                             </div>
                             <div class="card-body p-0">
 
                                 @foreach ($recentclient as $recentclients)
-                                    <div class="p-3 d-flex align-items-center bg-white border-bottom osahan-post-header">
+                                    <div class="p-3 d-flex align-items-center bg-white border-0 osahan-post-header">
 
                                         <div class="font-weight-bold mr-3">
                                             <div class="text-truncate">{{ $recentclients->name }}</div>

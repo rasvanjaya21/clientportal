@@ -36,7 +36,7 @@ class ClientController extends Controller
                 ->addColumn('action', function ($item) {
                     return '
                     <div class="btn-group">
-                        <a href=" ' . route('client.project.index', $item->id) . ' " class="btn btn-dark mb-3 mr-3">
+                        <a href=" ' . route('client.project.index', $item->id) . ' " class="btn btn-dark rounded mb-3 mr-3">
                             Project
                         </a>
                         <div class="dropdown">
