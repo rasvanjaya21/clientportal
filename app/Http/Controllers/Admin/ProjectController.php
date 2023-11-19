@@ -6,9 +6,10 @@ use App\Models\Client;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\ProjectRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
+use App\Http\Requests\Admin\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -121,6 +122,17 @@ class ProjectController extends Controller
     public function update(ProjectRequest $request, Project $project)
     {
         $data = $request->all();
+        $item = $project;
+        if ($request->hasFile('photo')) {
+
+            $data['photo'] = $request->file('photo')->store('assets/imgproject', 'public');
+            if ($item->photo) {
+                Storage::delete($item->photo);
+                File::delete(public_path('storage/' . $item->photo));
+            }
+        } else {
+            $request['photo'] = $item->photo;
+        }
 
         $item = $project;
 
@@ -137,6 +149,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        File::delete(public_path('storage/' . $project->photo));
         $project->delete();
         return redirect()->route('client.project.index', $project->clients_id);
     }

@@ -10,8 +10,8 @@
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Edit Project</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                  Look what you have made today!
-                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                          Look what you have made today!
+                                                                                                                                                                                                                                        </p> -->
             </div>
 
             <div class="dashboard-content">
@@ -27,7 +27,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <div class="card">
+                        <div class="card p-3 border-0 mb-5 " style="border-radius: 20px;">
                             <div class="card-body">
                                 <form action="{{ route('project.update', $item->id) }}" method="POST"
                                     enctype="multipart/form-data">
@@ -108,6 +108,8 @@
                                             <div class="form-group">
                                                 <label>Img Project</label>
                                                 <input type="file" name="photo" class="form-control">
+                                                <img src="{{ Storage::url($item->photo) }}" height="250px" width="200"
+                                                    style="object-fit: contain;">
                                             </div>
 
 

@@ -56,7 +56,7 @@
 
                 </div>
 
-                <div class="list-group list-group-flush" style="margin-top: 30vh;">
+                <div class="list-group list-group-flush" style="margin-top: 35vh;">
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
