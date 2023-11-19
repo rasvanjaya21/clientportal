@@ -8,9 +8,10 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use Yajra\DataTables\Facades\DataTables;
 
+use Yajra\DataTables\Facades\DataTables;
 use Yajra\DataTables\Contracts\DataTable;
 use App\Http\Requests\Admin\ClientRequest;
 
@@ -64,6 +65,7 @@ class ClientController extends Controller
         }
 
 
+
         return view('pages.admin.client.index');
     }
 
@@ -113,6 +115,7 @@ class ClientController extends Controller
     {
         $item = Client::findOrFail($id);
 
+
         return view('pages.admin.client.edit', [
             'item' => $item
         ]);
@@ -145,9 +148,14 @@ class ClientController extends Controller
     public function destroy($id)
     {
         $item = Client::findOrFail($id);
-        $project = Project::where('clients_id', $id);
+        $projectdelete = Project::where('clients_id', $id);
+        $project = Project::where('clients_id', $id)->get();
+        foreach ($project as $projects) {
+            File::delete(public_path('storage/' . $projects->photo));
+        }
+
         $item->delete();
-        $project->delete();
+        $projectdelete->delete();
         return redirect()->route('client.index');
     }
 }
