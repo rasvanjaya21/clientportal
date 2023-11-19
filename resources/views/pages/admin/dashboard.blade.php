@@ -13,8 +13,8 @@
                 <h2 class="dashboard-title font-weight-bolder">Admin Dashboard</h2>
 
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                                                                                                                                                                                                                  Look what you have made today!
-                                                                                                                                                                                                                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Look what you have made today!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </p> -->
             </div>
 
             <div class="dashboard-content mt-4">
@@ -80,7 +80,7 @@
                                     <div class="p-3 d-flex align-items-center border-0">
 
                                         <div class="font-weight-bold mr-3">
-                                            <div class="text-truncate">{{ $noti->guest_name }} has commented on
+                                            <div class="text-truncate text-wrap">{{ $noti->guest_name }} has commented on
                                                 {{ $noti->name }}
                                                 project</div>
                                             <div class="small">{{ $noti->comment }}</div>
@@ -89,7 +89,7 @@
                                         </div>
                                         <span class="ml-auto mb-auto">
 
-                                            <div class="text-right text-muted pt-1">
+                                            <div class="text-right text-muted pt-1 text-wrap">
                                                 {{ \Carbon\Carbon::parse($noti->created_at)->diffForHumans() }}
                                             </div>
                                         </span>
