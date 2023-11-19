@@ -35,7 +35,7 @@ All of the JavaScript dependencies required by your application can be found in 
 git clone https://github.com/akmalfaditya/clientportal.git
 
 # cd into your project directory
-cd clienportal
+cd clientportal
 
 #install composer and npm packages
 composer install
