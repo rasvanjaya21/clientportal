@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Client Admin Portal Dashboard
+    Client
 @endsection
 
 @section('content')
@@ -10,14 +10,14 @@
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Client Admin Dashboard</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                              Look what you have made today!
-                                                                                                                                                                            </p> -->
+                                                                                                                                                                                      Look what you have made today!
+                                                                                                                                                                                    </p> -->
             </div>
 
             <div class="dashboard-content mt-4">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card border-0 p-3" style="border-radius: 20px;">
+                        <div class="card shadow border-0 p-3" style="border-radius: 20px;">
                             <div class="card-body">
                                 <a href="{{ route('client.create') }}" class="btn btn-primary mb-3">
                                     + Tambah Klien Baru

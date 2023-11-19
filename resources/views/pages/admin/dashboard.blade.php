@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Admin Portal Dashboard
+    Dashboard
 @endsection
 
 @section('content')
@@ -13,12 +13,12 @@
                 <h2 class="dashboard-title font-weight-bolder">Admin Dashboard</h2>
 
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                                                                                                                                                                                              Look what you have made today!
-                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                              Look what you have made today!
+                                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
             </div>
 
             <div class="dashboard-content mt-4">
-                <div class="card col-12 p-3 border-0" style="border-radius: 20px;">
+                <div class="card col-12 p-3 border-0  shadow" style="border-radius: 20px;">
                     <div class="row">
 
                         <div class="col-md-4 ">
@@ -70,7 +70,7 @@
                 <div class="row mt-4">
 
                     <div class="col-md-6">
-                        <div class="card shadow-sm bg-white mb-3 border-0 p-3" style="border-radius: 20px;">
+                        <div class="card shadow bg-white mb-3 border-0 p-3" style="border-radius: 20px;">
                             <div class="card-title border-0 p-3">
                                 <h6 class="m-0">Notifications</h6>
                             </div>
@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="card shadow-sm bg-white mb-3 border-0 p-3" style="border-radius: 20px;">
+                        <div class="card shadow bg-white mb-3 border-0 p-3" style="border-radius: 20px;">
                             <div class="card-title border-0 p-3">
                                 <h6 class="m-0">Recent Clients</h6>
                             </div>

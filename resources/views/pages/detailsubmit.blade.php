@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Client Portal Details
+    {{ $client->name }} - Portal Client
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
                                 <div>
                                     <h2 class="h2-contact">Halo {{ $client->name }}</h2>
                                     <p class="p-contact mb-3">
-                                        Tolong masukkan password yang sudah diberikan admin
+                                        Masukkan password yang sudah diberikan admin
                                     </p>
                                     @if (session('error'))
                                         <div class="alert alert-danger">

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Client Admin Portal Dashboard
+    Project {{ $client->name }}
 @endsection
 
 @section('content')
@@ -11,8 +11,8 @@
                 <h2 class="dashboard-title font-weight-bolder">Client &raquo; {{ $client->name }} &raquo; Projects &raquo;
                     Add New Projects </h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                                                                                                                                                                                  Look what you have made today!
-                                                                                                                                                                                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                      Look what you have made today!
+                                                                                                                                                                                                                                                                                                                                                                                    </p> -->
             </div>
 
             <div class="dashboard-content">
@@ -28,7 +28,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <div class="card border-0 p-3 mb-5" style="border-radius: 20px;">
+                        <div class="card shadow border-0 p-3 mb-5" style="border-radius: 20px;">
                             <div class="card-body">
                                 <form action="{{ route('client.project.store', $client->id) }}" method="post"
                                     enctype="multipart/form-data">

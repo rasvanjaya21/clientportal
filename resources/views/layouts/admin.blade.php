@@ -18,11 +18,11 @@
     @stack('addon-style')
 </head>
 
-<body>
-    <div class="page-dashboard">
+<body class="bg-light">
+    <div class="page-dashboard ">
         <div class="d-flex" id="wrapper" data-aos="fade-right">
             <!-- Sidebar -->
-            <div class="border-right p-3" id="sidebar-wrapper">
+            <div class=" p-3 bg-light " id="sidebar-wrapper">
                 <div class="sidebar-heading d-flex align-items-center">
                     <img src="/images/logo-dashboard.jpeg" alt="" class="my-4 width-logo" />
                     <p class="ml-1 my-0 title-dashboard">Dashboard</p>
@@ -32,19 +32,19 @@
                 <div class="list-group list-group-flush">
 
                     <a href="{{ route('admin-dashboard') }}"
-                        class="mt-3 list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : '' }}"
+                        class="mt-3 list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : 'bg-light' }}"
                         style="border-radius: 10px;">
 
                         Dashboard
                     </a>
                     <a href="{{ route('client.index') }}"
-                        class="mt-3 list-group-item list-group-item-action {{ request()->is('admin/client*') ? 'active' : '' }}"
+                        class="mt-3 list-group-item list-group-item-action {{ request()->is('admin/client*') ? 'active' : 'bg-light' }} "
                         style="border-radius: 10px;">
 
                         Client
                     </a>
 
-                    <a href="{{ route('logout') }}"
+                    {{-- <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
                         class="mt-3 list-group-item list-group-item-action">
@@ -52,15 +52,15 @@
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
-                    </form>
+                    </form> --}}
 
                 </div>
 
-                <div class="list-group list-group-flush" style="margin-top: 35vh;">
+                <div class="list-group list-group-flush" style="margin-top: 45vh;">
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
-                        class="mt-3 list-group-item list-group-item-action" style="border-radius: 10px;">
+                        class="mt-3 list-group-item list-group-item-action bg-light" style="border-radius: 10px;">
                         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                             <style>
                                 svg {
@@ -82,7 +82,7 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-            <div id="page-content-wrapper">
+            <div id="page-content-wrapper" class="bg-light">
                 {{-- <nav class="navbar navbar-store navbar-expand-lg navbar-light fixed-top" data-aos="fade-down">
                     <button class="btn btn-secondary d-md-none mr-auto mr-2" id="menu-toggle">
                         &laquo; Menu

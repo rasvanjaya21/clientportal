@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Client Portal Details
+    {{ $client->name }} - Portal Client
 @endsection
 
 @section('content')
@@ -110,7 +110,7 @@
                                 <div>
                                     <h2 class="h2-contact">Halo {{ $client->name }}</h2>
                                     <p class="p-contact mb-3">
-                                        Selamat datang di Client Portal Webcare Indonesia
+                                        Selamat datang di Portal Client Webcare Indonesia
                                     </p>
                                     <a href="/details/comments/{{ $client->slug }}"
                                         class="text-white font-contact btn-contact btn btn-primary py-2 px-lg-3">
