@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 
 @section('title')
     Add Client
@@ -10,8 +10,8 @@
             <div class="dashboard-heading">
                 <h2 class="dashboard-title font-weight-bolder">Add New Client</h2>
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                  Look what you have made today!
-                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                      Look what you have made today!
+                                                                                                                                                                                                                    </p> -->
             </div>
 
             <div class="dashboard-content">

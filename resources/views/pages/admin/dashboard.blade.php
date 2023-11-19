@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 
 @section('title')
     Dashboard
@@ -13,8 +13,8 @@
                 <h2 class="dashboard-title font-weight-bolder">Admin Dashboard</h2>
 
                 <!-- <p class="dashboard-subtitle">
-                                                                                                                                                                                                                                                                                                                                                                                                              Look what you have made today!
-                                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                  Look what you have made today!
+                                                                                                                                                                                                                                                                                                                                                                                                                </p> -->
             </div>
 
             <div class="dashboard-content mt-4">
