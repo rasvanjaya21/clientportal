@@ -26,6 +26,10 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 All of the JavaScript dependencies required by your application can be found in the `package.json` file in the project's root directory. This file is similar to a `composer.json` file except it specifies JavaScript dependencies instead of PHP dependencies. You can install these dependencies using the [Node package manager (NPM)](https://www.npmjs.org):
 
 ```bash
+composer install
+```
+
+```bash
 npm install
 ```
 
