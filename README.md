@@ -21,29 +21,41 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Requirements
+
+-   Composer
+-   Npm installer
+
 ### Installation
 
 All of the JavaScript dependencies required by your application can be found in the `package.json` file in the project's root directory. This file is similar to a `composer.json` file except it specifies JavaScript dependencies instead of PHP dependencies. You can install these dependencies using the [Node package manager (NPM)](https://www.npmjs.org):
 
 ```bash
-composer install
-```
+# Clone the repository from GitHub and open the directory:
+git clone https://github.com/akmalfaditya/clientportal.git
 
-```bash
-npm install
+# cd into your project directory
+cd clienportal
+
+#install composer and npm packages
+composer install
+npm install && npm run dev
+npm run build
+
+# Start prepare the environment:
+cp .env.example .env // setup database credentials
+php artisan key:generate
+php artisan migrate
+php artisan storage:link
+
+# Run your server
+php artisan serve
+
 ```
 
 > By default, the Laravel `package.json` file includes a few packages such as `lodash` and `axios` to help you get started building your JavaScript application. Feel free to add or remove from the `package.json` file as needed for your own application.
 
 Once the packages are installed, you can use the `npm run dev` command to [compile your assets](https://laravel.com/docs/vite). Vite is a module bundler for modern JavaScript applications. When you run the `npm run dev` command, Vite will execute the instructions in your `vite.config.js` file:
-
-```bash
-npm run dev
-```
-
-```bash
-npm run build
-```
 
 <!-- ## Learning Laravel
 
