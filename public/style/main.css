@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9767,6 +9768,186 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.signinup {
+  position: relative;
+  min-height: 100vh;
+  background-color: #450cff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.signinup .container-signinup {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.signinup .container-signinup .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.signinup .container-signinup .user .imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #0b20e9;
+  transition: 0.5s;
+}
+
+.signinup .container-signinup .user .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.signinup .container-signinup .user .formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 0.5s;
+}
+
+.signinup .container-signinup .user .formBx form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.signinup .container-signinup .user .formBx form input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.signinup .container-signinup .user .formBx form input[type=submit] {
+  max-width: 100px;
+  background-image: linear-gradient(to right, #0B20E9, #122587);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.signinup .container-signinup .user .formBx form input[type=submit]:hover {
+  max-width: 100px;
+  background: #fff;
+  color: #122587;
+  border: solid #0B20E9;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.signinup .container-signinup .user .formBx form .signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.signinup .container-signinup .user .formBx form .signup a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #677eff;
+}
+
+.signinup .container-signinup .signupBx {
+  pointer-events: none;
+}
+
+.signinup .container-signinup.active .signupBx {
+  pointer-events: initial;
+}
+
+.signinup .container-signinup .signupBx .formBx {
+  left: 100%;
+}
+
+.signinup .container-signinup.active .signupBx .formBx {
+  left: 0;
+}
+
+.signinup .container-signinup .signupBx .imgBx {
+  left: -100%;
+}
+
+.signinup .container-signinup.active .signupBx .imgBx {
+  left: 0%;
+}
+
+.signinup .container-signinup .signinBx .formBx {
+  left: 0%;
+}
+
+.signinup .container-signinup.active .signinBx .formBx {
+  left: 100%;
+}
+
+.signinup .container-signinup .signinBx .imgBx {
+  left: 0%;
+}
+
+.signinup .container-signinup.active .signinBx .imgBx {
+  left: -100%;
+}
+
+@media (max-width: 991px) {
+  .signinup .container-signinup {
+    max-width: 400px;
+  }
+  .signinup .container-signinup .imgBx {
+    display: none;
+  }
+  .signinup .container-signinup .user .formBx {
+    width: 100%;
+  }
+}
 .page-success .row-login {
   min-height: 75vh;
 }
@@ -9811,9 +9992,6 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
-.page-dashboard {
-  /* Loop creates the necessary css animation names */
-}
 .page-dashboard #page-content-wrapper {
   background: #f5f5fb;
   min-width: 100vw;
@@ -9873,6 +10051,9 @@ body {
   .page-dashboard #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+  .page-dashboard .dashboard-top {
+    margin-top: 5.5rem;
+  }
 }
 .page-dashboard .section-content {
   margin-top: 100px;
@@ -9893,9 +10074,12 @@ body {
   font-size: 16px;
   color: #9191a9;
 }
+.page-dashboard .section-content .product-category {
+  font-size: 16px;
+  color: #979797;
+}
 .page-dashboard .section-content .product-title {
   font-size: 14px;
-  line-height: 25px;
   color: #979797;
 }
 .page-dashboard .section-content .product-subtitle {
@@ -9925,1516 +10109,314 @@ body {
   top: -10px;
   right: 0;
 }
-.page-dashboard .admin-hero {
-  background-color: #4848fe;
-  border-radius: 15px;
-  padding: 30px 20px 10px 40px;
-  width: 100%;
-  margin-left: 0px;
-}
-.page-dashboard .flex-hero-1 {
-  flex: 60%; /* This will make the columns equally spaced */
-  height: 200px;
-}
-.page-dashboard .image-container {
-  position: relative;
-}
-.page-dashboard .image-hero {
-  position: absolute;
-  bottom: -55px;
-  right: 0;
-  width: 135%;
-}
-.page-dashboard .flex-hero-2 {
-  display: flex;
-  flex-direction: column;
-  flex: 40%; /* This will make the columns equally spaced */
-}
-.page-dashboard .flex-hero-2 .ftco-no-pt {
-  padding-top: 0;
-}
-.page-dashboard .flex-hero-2 .ftco-no-pb {
-  padding-bottom: 0;
-}
-.page-dashboard .flex-hero-2 .img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.page-dashboard .flex-hero-2 .elegant-calendar {
-  max-width: 700px;
-  text-align: center;
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0px 19px 27px -20px rgba(0, 0, 0, 0.16);
-}
-.page-dashboard .flex-hero-2 .wrap-header {
-  position: relative;
-  width: 40%;
-  z-index: 0;
-}
-.page-dashboard .flex-hero-2 .wrap-header:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  background: #000000;
-  opacity: 0.5;
-  z-index: -1;
-}
-@media (max-width: 767.98px) {
-  .page-dashboard .flex-hero-2 .wrap-header {
-    width: 100%;
-    padding: 20px 0;
-  }
-}
-.page-dashboard .flex-hero-2 #header {
-  width: 100%;
-  position: relative;
-}
-.page-dashboard .flex-hero-2 #header .pre-button,
-.page-dashboard .flex-hero-2 #header .next-button {
-  cursor: pointer;
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-}
-.page-dashboard .flex-hero-2 #header .pre-button i,
-.page-dashboard .flex-hero-2 #header .next-button i {
-  color: #fff;
-}
-.page-dashboard .flex-hero-2 .pre-button {
-  left: 5px;
-}
-.page-dashboard .flex-hero-2 .next-button {
-  right: 5px;
-}
-.page-dashboard .flex-hero-2 .button-wrap {
-  position: relative;
-  padding: 10px 0;
-}
-.page-dashboard .flex-hero-2 .button-wrap .pre-button,
-.page-dashboard .flex-hero-2 .button-wrap .next-button {
-  cursor: pointer;
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  font-size: 18px;
-}
-.page-dashboard .flex-hero-2 .button-wrap .pre-button i,
-.page-dashboard .flex-hero-2 .button-wrap .next-button i {
-  color: #cccccc;
-}
-.page-dashboard .flex-hero-2 .button-wrap .pre-button {
-  left: 20px;
-}
-.page-dashboard .flex-hero-2 .button-wrap .next-button {
-  right: 20px;
-}
-.page-dashboard .flex-hero-2 .head-day {
-  font-size: 4em;
-  line-height: 1;
-  color: #fff;
-}
-.page-dashboard .flex-hero-2 .head-month {
-  line-height: 1;
-  color: #fff;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-.page-dashboard .flex-hero-2 .calendar-wrap {
-  width: 100%;
-  background: #fff;
-  padding: 20px 10px 10px 10px;
-}
-@media (max-width: 767.98px) {
-  .page-dashboard .flex-hero-2 .calendar-wrap {
-    width: 100%;
-  }
-}
-.page-dashboard .flex-hero-2 .calendar-wrap .icon-color {
-  color: #4848fe;
-}
-.page-dashboard .flex-hero-2 #calendar {
-  width: 100%;
-}
-.page-dashboard .flex-hero-2 #calendar tr {
-  height: 2em;
-}
-.page-dashboard .flex-hero-2 #calendar .thead-calendar tr {
-  color: #000000;
-  font-weight: 500;
-  font-size: 12px;
-}
-.page-dashboard .flex-hero-2 #calendar .tbody-calendar tr {
-  color: #000;
-}
-.page-dashboard .flex-hero-2 #calendar .td-calendar {
-  width: 14%;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  position: relative;
-  z-index: 0;
-  font-size: 10px;
-}
-.page-dashboard .flex-hero-2 #calendar .td-calendar:after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  width: 25px;
-  height: 25px;
-  margin: 0 auto;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  transition: 0.3s;
-  z-index: -1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .page-dashboard .flex-hero-2 #calendar .td-calendar:after {
-    transition: none;
-  }
-}
-.page-dashboard .flex-hero-2 #calendar .td-calendar:hover,
-.page-dashboard .flex-hero-2 #calendar .selected {
-  color: #fff;
-  border: none;
-}
-.page-dashboard .flex-hero-2 #calendar .td-calendar:hover:after,
-.page-dashboard .flex-hero-2 #calendar .selected:after {
-  background: #2a3246;
-}
-.page-dashboard .flex-hero-2 #calendar tbody .td-calendar:active {
-  transform: scale(0.7);
-}
-.page-dashboard .flex-hero-2 #today {
-  color: #fff;
-}
-.page-dashboard .flex-hero-2 #today:after {
-  background: #4848fe;
-}
-.page-dashboard .flex-hero-2 #disabled {
-  cursor: default;
-  background: #fff;
-}
-.page-dashboard .flex-hero-2 #disabled:hover {
-  background: #fff;
-  color: #c9c9c9;
-}
-.page-dashboard .flex-hero-2 #disabled:hover:after {
-  background: transparent;
-}
-.page-dashboard .flex-hero-2 #reset {
-  display: block;
-  position: absolute;
-  right: 0.5em;
-  top: 0.5em;
-  z-index: 999;
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-  padding: 0 0.5em;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  font-size: 11px;
-}
-.page-dashboard .flex-hero-2 #reset:hover {
-  color: #fff;
-  border-color: #fff;
-}
-.page-dashboard .flex-hero-2 #reset:active {
-  transform: scale(0.8);
-}
-.page-dashboard .progress {
-  width: 85px;
-  height: 85px;
-  line-height: 85px;
-  background: none;
-  margin: 0 auto;
-  box-shadow: none;
-  position: relative;
-}
-.page-dashboard .progress:after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 5px solid #efefef;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.page-dashboard .progress > span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-.page-dashboard .progress .progress-left {
-  left: 0;
-}
-.page-dashboard .progress .progress-bar {
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-width: 5px;
-  border-style: solid;
-  position: absolute;
-  top: 0;
-  border-color: #d5d1f6;
-}
-.page-dashboard .progress .progress-left .progress-bar {
-  left: 100%;
-  border-top-right-radius: 42.5px;
-  border-bottom-right-radius: 42.5px;
-  border-left: 0;
-  transform-origin: center left;
-}
-.page-dashboard .progress .progress-right {
-  right: 0;
-}
-.page-dashboard .progress .progress-right .progress-bar {
-  left: -100%;
-  border-top-left-radius: 42.5px;
-  border-bottom-left-radius: 42.5px;
-  border-right: 0;
-  transform-origin: center right;
-}
-.page-dashboard .progress .progress-value {
-  display: flex;
-  border-radius: 50%;
-  font-size: 1rem;
-  text-align: center;
-  line-height: 20px;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  font-weight: 300;
-}
-.page-dashboard .progress .progress-value span {
-  font-size: 10px;
-  text-transform: uppercase;
-}
-.page-dashboard .progress[data-percentage="1"] .progress-right .progress-bar {
-  animation: loading-1 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="1"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="2"] .progress-right .progress-bar {
-  animation: loading-2 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="2"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="3"] .progress-right .progress-bar {
-  animation: loading-3 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="3"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="4"] .progress-right .progress-bar {
-  animation: loading-4 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="4"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="5"] .progress-right .progress-bar {
-  animation: loading-5 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="5"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="6"] .progress-right .progress-bar {
-  animation: loading-6 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="6"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="7"] .progress-right .progress-bar {
-  animation: loading-7 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="7"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="8"] .progress-right .progress-bar {
-  animation: loading-8 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="8"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="9"] .progress-right .progress-bar {
-  animation: loading-9 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="9"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="10"] .progress-right .progress-bar {
-  animation: loading-10 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="10"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="11"] .progress-right .progress-bar {
-  animation: loading-11 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="11"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="12"] .progress-right .progress-bar {
-  animation: loading-12 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="12"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="13"] .progress-right .progress-bar {
-  animation: loading-13 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="13"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="14"] .progress-right .progress-bar {
-  animation: loading-14 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="14"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="15"] .progress-right .progress-bar {
-  animation: loading-15 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="15"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="16"] .progress-right .progress-bar {
-  animation: loading-16 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="16"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="17"] .progress-right .progress-bar {
-  animation: loading-17 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="17"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="18"] .progress-right .progress-bar {
-  animation: loading-18 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="18"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="19"] .progress-right .progress-bar {
-  animation: loading-19 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="19"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="20"] .progress-right .progress-bar {
-  animation: loading-20 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="20"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="21"] .progress-right .progress-bar {
-  animation: loading-21 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="21"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="22"] .progress-right .progress-bar {
-  animation: loading-22 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="22"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="23"] .progress-right .progress-bar {
-  animation: loading-23 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="23"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="24"] .progress-right .progress-bar {
-  animation: loading-24 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="24"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="25"] .progress-right .progress-bar {
-  animation: loading-25 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="25"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="26"] .progress-right .progress-bar {
-  animation: loading-26 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="26"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="27"] .progress-right .progress-bar {
-  animation: loading-27 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="27"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="28"] .progress-right .progress-bar {
-  animation: loading-28 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="28"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="29"] .progress-right .progress-bar {
-  animation: loading-29 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="29"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="30"] .progress-right .progress-bar {
-  animation: loading-30 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="30"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="31"] .progress-right .progress-bar {
-  animation: loading-31 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="31"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="32"] .progress-right .progress-bar {
-  animation: loading-32 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="32"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="33"] .progress-right .progress-bar {
-  animation: loading-33 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="33"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="34"] .progress-right .progress-bar {
-  animation: loading-34 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="34"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="35"] .progress-right .progress-bar {
-  animation: loading-35 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="35"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="36"] .progress-right .progress-bar {
-  animation: loading-36 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="36"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="37"] .progress-right .progress-bar {
-  animation: loading-37 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="37"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="38"] .progress-right .progress-bar {
-  animation: loading-38 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="38"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="39"] .progress-right .progress-bar {
-  animation: loading-39 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="39"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="40"] .progress-right .progress-bar {
-  animation: loading-40 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="40"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="41"] .progress-right .progress-bar {
-  animation: loading-41 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="41"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="42"] .progress-right .progress-bar {
-  animation: loading-42 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="42"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="43"] .progress-right .progress-bar {
-  animation: loading-43 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="43"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="44"] .progress-right .progress-bar {
-  animation: loading-44 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="44"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="45"] .progress-right .progress-bar {
-  animation: loading-45 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="45"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="46"] .progress-right .progress-bar {
-  animation: loading-46 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="46"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="47"] .progress-right .progress-bar {
-  animation: loading-47 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="47"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="48"] .progress-right .progress-bar {
-  animation: loading-48 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="48"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="49"] .progress-right .progress-bar {
-  animation: loading-49 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="49"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="50"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="50"] .progress-left .progress-bar {
-  animation: 0;
-}
-.page-dashboard .progress[data-percentage="51"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="51"] .progress-left .progress-bar {
-  animation: loading-1 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="52"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="52"] .progress-left .progress-bar {
-  animation: loading-2 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="53"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="53"] .progress-left .progress-bar {
-  animation: loading-3 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="54"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="54"] .progress-left .progress-bar {
-  animation: loading-4 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="55"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="55"] .progress-left .progress-bar {
-  animation: loading-5 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="56"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="56"] .progress-left .progress-bar {
-  animation: loading-6 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="57"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="57"] .progress-left .progress-bar {
-  animation: loading-7 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="58"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="58"] .progress-left .progress-bar {
-  animation: loading-8 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="59"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="59"] .progress-left .progress-bar {
-  animation: loading-9 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="60"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="60"] .progress-left .progress-bar {
-  animation: loading-10 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="61"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="61"] .progress-left .progress-bar {
-  animation: loading-11 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="62"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="62"] .progress-left .progress-bar {
-  animation: loading-12 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="63"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="63"] .progress-left .progress-bar {
-  animation: loading-13 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="64"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="64"] .progress-left .progress-bar {
-  animation: loading-14 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="65"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="65"] .progress-left .progress-bar {
-  animation: loading-15 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="66"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="66"] .progress-left .progress-bar {
-  animation: loading-16 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="67"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="67"] .progress-left .progress-bar {
-  animation: loading-17 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="68"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="68"] .progress-left .progress-bar {
-  animation: loading-18 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="69"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="69"] .progress-left .progress-bar {
-  animation: loading-19 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="70"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="70"] .progress-left .progress-bar {
-  animation: loading-20 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="71"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="71"] .progress-left .progress-bar {
-  animation: loading-21 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="72"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="72"] .progress-left .progress-bar {
-  animation: loading-22 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="73"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="73"] .progress-left .progress-bar {
-  animation: loading-23 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="74"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="74"] .progress-left .progress-bar {
-  animation: loading-24 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="75"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="75"] .progress-left .progress-bar {
-  animation: loading-25 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="76"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="76"] .progress-left .progress-bar {
-  animation: loading-26 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="77"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="77"] .progress-left .progress-bar {
-  animation: loading-27 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="78"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="78"] .progress-left .progress-bar {
-  animation: loading-28 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="79"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="79"] .progress-left .progress-bar {
-  animation: loading-29 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="80"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="80"] .progress-left .progress-bar {
-  animation: loading-30 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="81"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="81"] .progress-left .progress-bar {
-  animation: loading-31 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="82"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="82"] .progress-left .progress-bar {
-  animation: loading-32 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="83"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="83"] .progress-left .progress-bar {
-  animation: loading-33 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="84"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="84"] .progress-left .progress-bar {
-  animation: loading-34 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="85"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="85"] .progress-left .progress-bar {
-  animation: loading-35 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="86"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="86"] .progress-left .progress-bar {
-  animation: loading-36 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="87"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="87"] .progress-left .progress-bar {
-  animation: loading-37 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="88"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="88"] .progress-left .progress-bar {
-  animation: loading-38 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="89"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="89"] .progress-left .progress-bar {
-  animation: loading-39 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="90"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="90"] .progress-left .progress-bar {
-  animation: loading-40 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="91"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="91"] .progress-left .progress-bar {
-  animation: loading-41 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="92"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="92"] .progress-left .progress-bar {
-  animation: loading-42 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="93"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="93"] .progress-left .progress-bar {
-  animation: loading-43 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="94"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="94"] .progress-left .progress-bar {
-  animation: loading-44 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="95"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="95"] .progress-left .progress-bar {
-  animation: loading-45 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="96"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="96"] .progress-left .progress-bar {
-  animation: loading-46 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="97"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="97"] .progress-left .progress-bar {
-  animation: loading-47 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="98"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="98"] .progress-left .progress-bar {
-  animation: loading-48 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="99"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="99"] .progress-left .progress-bar {
-  animation: loading-49 0.5s linear forwards 0.5s;
-}
-.page-dashboard .progress[data-percentage="100"] .progress-right .progress-bar {
-  animation: loading-50 0.5s linear forwards;
-}
-.page-dashboard .progress[data-percentage="100"] .progress-left .progress-bar {
-  animation: loading-50 0.5s linear forwards 0.5s;
-}
-@keyframes loading-1 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(3.6deg);
-  }
-}
-@keyframes loading-2 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(7.2deg);
-  }
-}
-@keyframes loading-3 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(10.8deg);
-  }
-}
-@keyframes loading-4 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(14.4deg);
-  }
-}
-@keyframes loading-5 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(18deg);
-  }
-}
-@keyframes loading-6 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(21.6deg);
-  }
-}
-@keyframes loading-7 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(25.2deg);
-  }
-}
-@keyframes loading-8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(28.8deg);
-  }
-}
-@keyframes loading-9 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(32.4deg);
-  }
-}
-@keyframes loading-10 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(36deg);
-  }
-}
-@keyframes loading-11 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(39.6deg);
-  }
-}
-@keyframes loading-12 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(43.2deg);
-  }
-}
-@keyframes loading-13 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(46.8deg);
-  }
-}
-@keyframes loading-14 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(50.4deg);
-  }
-}
-@keyframes loading-15 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(54deg);
-  }
-}
-@keyframes loading-16 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(57.6deg);
-  }
-}
-@keyframes loading-17 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(61.2deg);
-  }
-}
-@keyframes loading-18 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(64.8deg);
-  }
-}
-@keyframes loading-19 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(68.4deg);
-  }
-}
-@keyframes loading-20 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(72deg);
-  }
-}
-@keyframes loading-21 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(75.6deg);
-  }
-}
-@keyframes loading-22 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(79.2deg);
-  }
-}
-@keyframes loading-23 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(82.8deg);
-  }
-}
-@keyframes loading-24 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(86.4deg);
-  }
-}
-@keyframes loading-25 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-}
-@keyframes loading-26 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(93.6deg);
-  }
-}
-@keyframes loading-27 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(97.2deg);
-  }
-}
-@keyframes loading-28 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(100.8deg);
-  }
-}
-@keyframes loading-29 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(104.4deg);
-  }
-}
-@keyframes loading-30 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(108deg);
-  }
-}
-@keyframes loading-31 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(111.6deg);
-  }
-}
-@keyframes loading-32 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(115.2deg);
-  }
-}
-@keyframes loading-33 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(118.8deg);
-  }
-}
-@keyframes loading-34 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(122.4deg);
-  }
-}
-@keyframes loading-35 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(126deg);
-  }
-}
-@keyframes loading-36 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(129.6deg);
-  }
-}
-@keyframes loading-37 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(133.2deg);
-  }
-}
-@keyframes loading-38 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(136.8deg);
-  }
-}
-@keyframes loading-39 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(140.4deg);
-  }
-}
-@keyframes loading-40 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(144deg);
-  }
-}
-@keyframes loading-41 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(147.6deg);
-  }
-}
-@keyframes loading-42 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(151.2deg);
-  }
-}
-@keyframes loading-43 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(154.8deg);
-  }
-}
-@keyframes loading-44 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(158.4deg);
-  }
-}
-@keyframes loading-45 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(162deg);
-  }
-}
-@keyframes loading-46 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(165.6deg);
-  }
-}
-@keyframes loading-47 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(169.2deg);
-  }
-}
-@keyframes loading-48 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(172.8deg);
-  }
-}
-@keyframes loading-49 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(176.4deg);
-  }
-}
-@keyframes loading-50 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
+
+.dashboard-content .logo-row {
+  width: 30px;
 }
 
-.projects {
-  background-color: #fff;
-  border: 1px solid #ececec;
-  overflow-x: auto;
-  width: 100%;
-  border-radius: 10px;
-}
-.projects-inner {
-  border-radius: 4px;
+.menu-logo {
+  width: 30px;
 }
 
-.projects-header {
-  color: rgb(0, 0, 0);
-  padding: 22px;
+.card-list {
+  border: 1px solid #b3b3ff;
+  margin-bottom: 20px;
+  transition: border 0.1s, transform 0.3s;
+  border-radius: 0.8rem;
 }
-.projects-header .count,
-.projects-header .title {
-  display: inline-block;
+
+.card-important {
+  border: 1px solid #b3b3ff;
+  margin-bottom: 20px;
+  border-radius: 0.8rem;
 }
-.projects-header .count {
-  color: #738297;
-}
-.projects-header .zmdi {
+
+.card-list:hover {
+  border: 2px solid #003cbf;
+  transform: translateY(-4px);
   cursor: pointer;
-  float: right;
+}
+
+.card img:hover {
+  opacity: 0.6;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+.dashboard .logo-dashboard {
+  width: 50px;
+}
+.dashboard .menu-icon {
+  width: 1.3rem;
+}
+.dashboard .menu-font {
   font-size: 16px;
-  margin: 5px 0;
 }
-.projects-header .title {
-  font-size: 20px;
-}
-.projects-header .title + .count {
-  margin-left: 5px;
-}
-
-.projects-table {
-  background: #fff;
-  width: 100%;
-}
-.projects-table .td-status,
-.projects-table .th-status {
-  color: rgb(0, 0, 0);
-  padding: 10px 5px 10px 5px;
-  vertical-align: middle;
-}
-.projects-table .td-status p {
-  font-size: 12px;
-}
-.projects-table .td-status p:last-of-type {
-  color: #738297;
-  font-size: 11px;
-}
-.projects-table .th-status {
-  background-color: #f4f4f4;
+.dashboard .submenu-font {
   font-size: 14px;
 }
-.projects-table tr:hover {
-  background-color: #fcfcfc;
+
+.dashboard-app {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  margin-top: 84px;
 }
-.projects-table tr:not(:last-of-type) {
-  border-bottom: 1px solid #ececec;
+
+.dashboard-content {
+  flex-grow: 2;
+  padding: 25px;
+  background: #f6f8fa;
 }
-.projects-table .member figure,
-.projects-table .member .member-info {
-  display: inline-block;
-  vertical-align: top;
-}
-.projects-table .member figure + .member-info {
-  margin-left: 7px;
-}
-.projects-table .member img {
-  border-radius: 50%;
-  height: 32px;
-  width: 32px;
-}
-.projects-table .status > form {
-  float: right;
-}
-.projects-table .status-text {
-  display: inline-block;
-  font-size: 12px;
-  margin: 11px 0;
-  padding-left: 20px;
-  position: relative;
-}
-.projects-table .status-text:before {
-  border: 3px solid;
-  border-radius: 50%;
-  content: "";
-  height: 14px;
+
+.dashboard-nav {
+  min-width: 238px;
+  position: fixed;
   left: 0;
-  position: absolute;
-  top: 1px;
-  width: 14px;
-}
-.projects-table .status-text.status-blue:before {
-  border-color: #1c93ed;
-}
-.projects-table .status-text.status-green:before {
-  border-color: #66b92e;
-}
-.projects-table .status-text.status-orange:before {
-  border-color: #da932c;
-}
-.projects-table .status-text.status-red:before {
-  border-color: #d65b4a;
-}
-
-.selectric {
-  background-color: transparent;
-  border-color: #ececec;
-  border-radius: 4px;
-}
-.selectric .label {
-  color: #738297;
-  line-height: 34px;
-  margin-right: 10px;
-  text-align: left;
-}
-.selectric-wrapper {
-  float: right;
-  width: 150px;
-}
-
-.chart {
-  border-radius: 3px;
-  border: 1px solid #ececec;
-  color: white;
-  padding: 10px;
-  position: relative;
-  text-align: center;
-}
-.chart canvas {
-  height: 400px;
-  margin: 20px 0;
-  width: 100%;
-}
-.chart .actions {
-  margin: 15px;
-  position: absolute;
-  right: 0;
   top: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: #373193;
 }
-.chart .actions span {
-  cursor: pointer;
-  display: inline-block;
+
+.dashboard-compact .dashboard-nav {
+  display: none;
+}
+
+.dashboard-nav header {
+  min-height: 84px;
+  padding: 8px 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-nav header .menu-toggle {
+  display: none;
+  margin-right: auto;
+}
+
+.dashboard-nav a {
+  color: #515151;
+}
+
+.dashboard-nav a:hover {
+  text-decoration: none;
+}
+
+.dashboard-nav {
+  background-color: #f6f8fa;
+}
+
+.dashboard-nav a {
+  color: #6f7583;
+}
+
+.brand-logo {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 20px;
-  margin: 5px;
-  padding: 4px;
-}
-.chart .actions .btn-link {
-  color: white;
-}
-.chart .actions .btn-link i {
-  font-size: 1.75rem;
-}
-.chart .title {
-  font-size: 18px;
-  margin: 0;
-  padding: 15px 0 5px;
-}
-.chart .title + .tagline {
-  margin-top: 10px;
-}
-.chart .tagline {
-  font-size: 12px;
+  display: flex;
+  color: #515151;
+  align-items: center;
 }
 
-.danger-item {
-  border-left: 4px solid #a84d43;
+.brand-logo:focus,
+.brand-logo:active,
+.brand-logo:hover {
+  color: #dbdbdb;
+  text-decoration: none;
 }
 
-.zmdi {
-  line-height: 1;
-  vertical-align: middle;
-}
-
-.white-section {
-  background-color: #fff;
-  padding: 20px;
-  margin-top: 20px;
-}
-.white-section .title-applicants-left {
-  font-size: 16px;
-}
-.white-section .sub-item-applicants .applicant-info {
-  font-size: 12px;
-}
-.white-section .profile-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.brand-logo i {
+  color: #d2d1d1;
+  font-size: 27px;
   margin-right: 10px;
 }
-.white-section .title-applicants-right {
-  font-size: 12px;
-  text-decoration: underline;
+
+.dashboard-nav-list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
+.dashboard-nav-item {
+  min-height: 56px;
+  padding: 8px 20px 8px 70px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  transition: ease-out 0.5s;
+}
+
+.dashboard-nav-item i {
+  width: 36px;
+  font-size: 19px;
+  margin-left: -40px;
+}
+
+.dashboard-nav-item:hover {
+  background: #c1f1fd;
+}
+.dashboard-nav-item:hover .menu-icon,
+.dashboard-nav-item:hover p.active-menu {
+  fill: #6f7583;
+  color: #6f7583;
+}
+
+.active {
+  background: #0560fd;
+  border-radius: 20px;
+  margin: 0px 30px;
+  padding: 0px 40px 0px 40px;
+}
+.active .menu-icon {
+  fill: #ffffff;
+}
+.active .active-menu {
+  color: #ffffff;
+}
+
+.dashboard-nav-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-nav-dropdown.show {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dashboard-nav-dropdown.show > .dashboard-nav-dropdown-toggle {
+  font-weight: bold;
+}
+
+.dashboard-nav-dropdown.show > .dashboard-nav-dropdown-toggle:after {
+  transform: none;
+}
+
+.dashboard-nav-dropdown.show > .dashboard-nav-dropdown-menu {
+  display: flex;
+}
+
+.dashboard-nav-dropdown-toggle:after {
+  content: "";
+  margin-left: auto;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(81, 81, 81, 0.8);
+  transform: rotate(90deg);
+}
+
+.dashboard-nav .dashboard-nav-dropdown-toggle:after {
+  border-top-color: rgba(255, 255, 255, 0.72);
+}
+
+.dashboard-nav-dropdown-menu {
+  display: none;
+  flex-direction: column;
+}
+
+.dashboard-nav-dropdown-item {
+  min-height: 40px;
+  padding: 8px 20px 8px 70px;
+  display: flex;
+  align-items: center;
+  transition: ease-out 0.5s;
+}
+
+.dashboard-nav-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.menu-toggle {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #443ea2;
+}
+
+.menu-toggle:hover,
+.menu-toggle:active,
+.menu-toggle:focus {
+  text-decoration: none;
+  color: #875de5;
+}
+
+.menu-toggle i {
+  font-size: 20px;
+}
+
+.dashboard-toolbar {
+  min-height: 84px;
+  background-color: #f6f8fa;
+  display: flex;
+  align-items: center;
+  padding: 8px 27px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-item-divider {
+  height: 1px;
+  margin: 1rem 0;
+  overflow: hidden;
+  background-color: rgba(236, 238, 239, 0.3);
+}
+
+@media (min-width: 992px) {
+  .dashboard-app {
+    margin-left: 238px;
+  }
+  .dashboard-compact .dashboard-app {
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 15px 0px;
+  }
+}
+@media (max-width: 992px) {
+  .dashboard-nav-item {
+    padding: 8px 20px 8px 35px;
+  }
+  .dashboard-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1070;
+  }
+  .dashboard-nav.mobile-show {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  .dashboard-nav header .menu-toggle {
+    display: flex;
+  }
+}
+@media (min-width: 992px) {
+  .dashboard-toolbar {
+    left: 238px;
+  }
+  .dashboard-compact .dashboard-toolbar {
+    left: 0;
+  }
+}
 .store-breadcrumbs .breadcrumb {
   background: transparent;
   padding: 0;

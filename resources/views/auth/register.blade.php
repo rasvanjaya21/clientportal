@@ -80,7 +80,7 @@
 </div> --}}
 
 
-    <div class="page-content page-auth mb-5 mt-10" id="register">
+    {{-- <div class="page-content page-auth mb-5 mt-10" id="register">
         <div class="section-store-auth " data-aos="fade-up">
             <div class="container">
                 <div class="row justify-content-center">
@@ -107,7 +107,9 @@
                                 <label>Email</label>
 
 
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -118,7 +120,9 @@
                             <div class="form-group">
                                 <label>Password</label>
 
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -129,25 +133,84 @@
                             <div class="form-group">
                                 <label>Password Confirmation</label>
 
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control"
+                                    name="password_confirmation" required autocomplete="new-password">
 
 
                             </div>
                             <div class="form-group">
-                                
 
-                            <button type="submit" class="btn btn-success btn-block mt-4">
-                                Sign Up
-                            </button>
-                            <a href="{{ route('login') }}" class="btn btn-signup btn-block mt-2">
-                                Sign In
-                            </a>
+
+                                <button type="submit" class="btn btn-success btn-block mt-4">
+                                    Sign Up
+                                </button>
+                                <a href="{{ route('login') }}" class="btn btn-signup btn-block mt-2">
+                                    Sign In
+                                </a>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+
+    <section class="signinup">
+        <div class="container-signinup active">
+            <div class="user signupBx">
+                <div class="formBx">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+
+                        <h2>Create an account</h2>
+                        <input id="name" type="text" @error('name') class="is-invalid @enderror" name="name"
+                            placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+
+
+
+
+
+                        <input id="email" type="email" @error('email') class="is-invalid @enderror" name="email"
+                            placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+
+
+                        <input id="password" type="password" class="@error('password') is-invalid @enderror"
+                            name="password" placeholder="Create Password" required autocomplete="new-password">
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+
+
+                        <input id="password-confirm" placeholder="Confirm Password" type="password"
+                            name="password_confirmation" required autocomplete="new-password">
+
+                        <input type="submit" name="" value="Sign Up" />
+                        <p class="signup">
+                            Already have an account ?
+                            <a href="#" onclick="toggleForm('./login');">Sign In.</a>
+                        </p>
+                    </form>
+                </div>
+                <div class="imgBx"><img src="/images/signin-up/signup.svg" alt="" /></div>
+            </div>
+        </div>
+    </section>
 @endsection
-
-

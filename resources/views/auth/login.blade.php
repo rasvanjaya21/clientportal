@@ -129,7 +129,7 @@
     </div> --}}
 
     <!-- Page Content Responsive -->
-    <div class="page-content page-auth pt-5 pb-5">
+    {{-- <div class="page-content page-auth pt-5 pb-5">
         <div class="section-store-auth" data-aos="fade-up">
             <div class="container">
                 <div class="row align-items-center row-login justify-content-center">
@@ -177,5 +177,46 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+
+
+    <section class="signinup">
+        <div class="container-signinup" style="border-radius: 20px;">
+            <div class="user signinBx">
+                <div class="imgBx"><img src="/images/signin-up/signin.svg" alt="" /></div>
+                <div class="formBx">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <h2>Sign In</h2>
+
+                        <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
+                            value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+
+                        <input id="password" type="password" class="@error('password') is-invalid @enderror"
+                            name="password" required autocomplete="current-password" placeholder="Password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <input type="submit" name="" value="Login" />
+                        <p class="signup">
+                            Don't have an account ?
+                            <a href="#" onclick="toggleForm('./register');">Sign Up.</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
 @endsection

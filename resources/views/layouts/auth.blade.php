@@ -20,14 +20,14 @@
 <body>
 
     {{-- Navbar --}}
-    @include('includes.navbar')
+    {{-- @include('includes.navbar') --}}
 
     {{-- Page Content --}}
     @yield('content')
 
 
     {{-- Footer --}}
-    @include('includes.footer')
+    {{-- @include('includes.footer') --}}
 
 
     {{-- Script --}}
