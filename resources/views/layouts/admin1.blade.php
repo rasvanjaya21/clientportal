@@ -67,7 +67,7 @@
                         </a>
 
 
-                        <div class="nav-item-divider" style="height: 40vh;"></div>
+                        <div class="nav-item-divider" style="margin-top: 40vh;"></div>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
