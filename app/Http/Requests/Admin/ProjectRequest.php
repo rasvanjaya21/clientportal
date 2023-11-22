@@ -32,7 +32,7 @@ class ProjectRequest extends FormRequest
             'progress' => 'required|integer',
             'masaaktif' => 'required',
             'notes' => 'required|string',
-            // 'photo' => 'required|image',
+            'photo' => 'image',
 
         ];
     }

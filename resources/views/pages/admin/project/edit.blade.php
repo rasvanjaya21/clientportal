@@ -1,7 +1,7 @@
 @extends('layouts.admin1')
 
 @section('title')
-    Edit Project {{ $client->name }}
+    Edit Project {{ $item->name }}
 @endsection
 
 @section('content')
