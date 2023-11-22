@@ -19,13 +19,16 @@
 
 <body>
 
-    {{-- Navbar --}}
-    @include('includes.homenavbar')
+    <div style="background-color: #0b20e9;">
+        {{-- Navbar --}}
+        @include('includes.homenavbar')
 
 
 
-    {{-- Page Content --}}
-    @yield('content')
+        {{-- Page Content --}}
+        @yield('content')
+    </div>
+
 
 
 
