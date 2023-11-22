@@ -18,7 +18,7 @@
     @stack('addon-style')
 </head>
 
-<body>
+<body style="max-width: 100vw;">
     <div class="page-dashboard">
         <div class="d-flex" id="wrapper" data-aos="fade-right">
             <!-- Sidebar -->
