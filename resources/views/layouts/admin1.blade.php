@@ -22,7 +22,7 @@
     <div class="page-dashboard">
         <div class="d-flex" id="wrapper" data-aos="fade-right">
             <!-- Sidebar -->
-            <div class="dashboard">
+            <div class="dashboard mb-md-5">
                 <div class="dashboard-nav">
                     <header>
                         <a href="#!" class="menu-toggle">
@@ -132,7 +132,7 @@
 
 
             <!-- Page Content -->
-            <div class="dashboard-content" data-aos="fade-up">
+            <div class="dashboard-content m-md-5" data-aos="fade-up">
                 <div class="dashboard-top">
 
                     <!-- Content -->
