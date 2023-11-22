@@ -2,6 +2,7 @@ $primary: #4848fe;
 $sidebar: #f6f8fa;
 $sidebarMenu: #6f7583;
 $sidebarHoverMenu: #0560fd;
+$hoversideBarMenu: #ffffff;
 
 .page-dashboard {
   #page-content-wrapper {
@@ -26,10 +27,11 @@ $sidebarHoverMenu: #0560fd;
     .list-group {
       width: 100%;
     }
+  }
 
-    .title-dashboard {
-      font-size: 15px;
-    }
+  .title-dashboard {
+    font-size: 20px;
+    color: #000000;
   }
 
   #wrapper {
@@ -151,6 +153,21 @@ $sidebarHoverMenu: #0560fd;
   }
 }
 
+
+.name-user {
+  font-size: 14px;
+  color: #000000;
+}
+
+.status-user {
+  font-size: 12px;
+  color: #b3b5b8;
+}
+
+.profile-picture {
+  max-height: 45px;
+}
+
 .dashboard-content {
   .logo-row {
     width: 30px;
@@ -160,6 +177,27 @@ $sidebarHoverMenu: #0560fd;
 .menu-logo {
   width: 30px;
 }
+
+.section-left {
+  width: 78%;
+}
+
+.section-right {
+  width: 22%;
+}
+
+.section-left-2 {
+  width: 70%;
+}
+
+.section-right-2 {
+  width: 30%;
+}
+
+.text-days {
+  font-size: 12px;
+}
+
 
 $color-two: #003cbf;
 $color-three: #b3b3ff;
@@ -175,6 +213,14 @@ $color-three: #b3b3ff;
   border: 1px solid $color-three;
   margin-bottom: 20px;
   border-radius: 0.8rem;
+  
+  .card-title {
+    border-bottom: solid 1.5px #eeeeee;
+    .m-0.font-weight-bolder {
+      font-size: 16px;
+      color: #000000;
+    }
+  }
 }
 
 .card-list:hover {
@@ -197,10 +243,6 @@ $color-three: #b3b3ff;
 
   .logo-dashboard {
     width: 50px;
-  }
-
-  .menu-icon {
-    width: 1.3rem;
   }
 
   .menu-font {
@@ -352,16 +394,20 @@ $color-three: #b3b3ff;
   margin-left: -40px;
 }
 .dashboard-nav-item:hover {
-  background: #c1f1fd;
+  background: #dce8fd;
+  border-radius: 20px;
+  margin: 0px 30px;
+  padding: 0px 40px 0px 40px;
 
-  .menu-icon,
-  p.active-menu {
-    fill: $sidebarMenu;
-    color: $sidebarMenu;
+  .menu-icon {
+    fill: $sidebarHoverMenu;
+  }
+  .menu-font {
+    color: $sidebarHoverMenu;
   }
 }
 
-.active {
+.active-item {
   background: $sidebarHoverMenu;
   border-radius: 20px;
   margin: 0px 30px;
@@ -369,11 +415,17 @@ $color-three: #b3b3ff;
 
   .menu-icon {
     fill: #ffffff;
+    width: 1.3rem;
   }
 
   .active-menu {
     color: #ffffff;
   }
+}
+
+.menu-icon-normal {
+  fill: $sidebarMenu;
+  width: 1.3rem;
 }
 
 .dashboard-nav-dropdown {
@@ -530,7 +582,7 @@ $color-three: #b3b3ff;
   .dashboard-nav-item {
     padding: 8px 20px 8px 35px;
   }
-    .dashboard-nav {
+  .dashboard-nav {
     display: none;
     position: fixed;
     top: 0;

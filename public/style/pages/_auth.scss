@@ -22,19 +22,12 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
 
 .signinup {
   position: relative;
   min-height: 100vh;
-  background-color: #450cff ;
+  background-color: #450cff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,9 +107,9 @@
   font-weight: 300;
 }
 
-.signinup .container-signinup .user .formBx form input[type='submit'] {
+.signinup .container-signinup .user .formBx form input[type="submit"] {
   max-width: 100px;
-  background-image: linear-gradient(to right,  #0B20E9, #122587);
+  background-image: linear-gradient(to right, #0b20e9, #122587);
   color: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -125,18 +118,16 @@
   transition: 0.5s;
 }
 
-.signinup .container-signinup .user .formBx form input[type='submit']:hover {
+.signinup .container-signinup .user .formBx form input[type="submit"]:hover {
   max-width: 100px;
   background: #fff;
   color: #122587;
-  border: solid #0B20E9;
+  border: solid #0b20e9;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
 }
-
-
 
 .signinup .container-signinup .user .formBx form .signup {
   position: relative;
@@ -207,4 +198,3 @@
     width: 100%;
   }
 }
-
