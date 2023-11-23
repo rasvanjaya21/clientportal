@@ -26,12 +26,13 @@
                 <div class="dashboard-nav">
                     <header>
                         <a href="#!" class="menu-toggle">
-                            <img src="/images/dashboard/close.svg" alt="" srcset="" class="menu-logo"></a>
+                            <img src="/images/dashboard/close.svg" alt="" srcset="" class="menu-logo"
+                                style="color: black;"></a>
                         <a href="#" class="brand-logo">
                             <img src="/images/dashboard/logo-webcare.svg" alt="" srcset=""
                                 class="logo-dashboard">
                             <span>
-                                <p class="title-dashboard my-auto">
+                                <p class="title-dashboard my-auto" style="color: white;">
                                     Client Portal
                                 </p>
                             </span>
@@ -46,7 +47,7 @@
                                     <path
                                         d="M4 13h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zm0 8h6c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm10 0h6c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zM13 4v4c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1z" />
                                 </svg>
-                                <p class="menu-font ml-1 my-auto {{ request()->is('admin') ? 'active-menu' : '' }}">
+                                <p class="menu-font ml-1 my-auto  {{ request()->is('admin') ? 'active-menu' : '' }}">
                                     Dashboard
                                 </p>
                             </a>
@@ -67,17 +68,17 @@
                         </a>
 
 
-                        <div class="nav-item-divider" style="margin-top: 40vh;"></div>
+                        {{-- <div class="nav-item-divider" style="margin-top: 40vh;"></div> --}}
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
-                            class="dashboard-nav-item">
+                            class="dashboard-nav-item" style="margin-top: 45vh;">
                             <svg class="menu-icon menu-icon-normal" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
+                                style=" fill: white;" viewBox="0 0 24 24">
                                 <path
                                     d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10ZM7 11V8l-5 4l5 4v-3h8v-2H7Z" />
                             </svg>
-                            <p class="menu-font ml-1 my-auto">
+                            <p class="menu-font ml-1 my-auto text-white">
                                 Log Out
                             </p>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

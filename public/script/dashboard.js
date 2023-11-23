@@ -1,4 +1,5 @@
-const mobileScreen = window.matchMedia("(max-width: 990px )");
+const mobileScreen = window.matchMedia("(max-width: 990px)");
+
 $(document).ready(function () {
     $(".dashboard-nav-dropdown-toggle").click(function () {
         $(this).closest(".dashboard-nav-dropdown")
@@ -9,12 +10,21 @@ $(document).ready(function () {
             .siblings()
             .removeClass("show");
     });
+
     $(".menu-toggle").click(function () {
         if (mobileScreen.matches) {
-            $(".dashboard-nav").toggleClass("mobile-show");
+            // Slide down/up animation for mobile menu toggle
+            $(".dashboard-nav").toggleClass("mobile-show").slideToggle(300); // Adjust the duration as needed
         } else {
             $(".dashboard").toggleClass("dashboard-compact");
+
+            // Slide animation for the dashboard content
+            $(".dashboard-app").animate({
+                marginLeft: $(".dashboard").hasClass("dashboard-compact") ? "0px" : "300px"
+            }, 300); // Adjust the duration as needed
+            $(".dashboard-nav").animate({
+                marginLeft: $(".dashboard").hasClass("dashboard-compact") ? "-300px" : "0px"
+            }, 300); 
         }
     });
 });
-

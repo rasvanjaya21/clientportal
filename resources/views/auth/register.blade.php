@@ -155,8 +155,8 @@
     </div> --}}
 
 
-    <section class="signinup">
-        <div class="container-signinup active" style="border-radius: 20px;">
+    <section class="signinup " style="background-color: white;">
+        <div class="container-signinup active shadow-lg" style="border-radius: 20px;">
             <div class="user signupBx">
                 <div class="formBx">
                     <form method="POST" action="{{ route('register') }}">

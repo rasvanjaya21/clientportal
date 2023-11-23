@@ -27,7 +27,7 @@
 .signinup {
   position: relative;
   min-height: 100vh;
-  background-color: #450cff;
+  background-color: #3445ED;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,3 +198,23 @@
     width: 100%;
   }
 }
+
+.show-hide {
+  position: relative;
+}
+
+.icon-show-hide {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .icon-show,
+  .icon-hide {
+    width: 20px;
+    height: 20px;
+    fill: #0b20e9;
+    cursor: pointer;
+  }
+}
+

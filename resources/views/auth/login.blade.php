@@ -181,8 +181,8 @@
 
 
 
-    <section class="signinup">
-        <div class="container-signinup" style="border-radius: 20px;">
+    <section class="signinup" style="background-color: white;">
+        <div class="container-signinup shadow-lg" style="border-radius: 20px;">
             <div class="user signinBx">
                 <div class="imgBx"><img src="/images/signin-up/signin.svg" alt="" /></div>
                 <div class="formBx">
