@@ -26,8 +26,7 @@
                 <div class="dashboard-nav">
                     <header>
                         <a href="#!" class="menu-toggle">
-                            <img src="/images/dashboard/close.svg" alt="" srcset="" class="menu-logo"
-                                style="color: black;"></a>
+                            <img src="/images/dashboard/close.svg" alt="" srcset="" class="menu-logo"></a>
                         <a href="#" class="brand-logo">
                             <img src="/images/dashboard/logo-webcare.svg" alt="" srcset=""
                                 class="logo-dashboard">

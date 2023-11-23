@@ -181,17 +181,38 @@
 
 
 
-    <section class="signinup">
-        <div class="container-signinup">
+    <section class="signinup" style="background-color: white;">
+        <div class="container-signinup shadow-lg" style="border-radius: 20px;">
             <div class="user signinBx">
                 <div class="imgBx"><img src="/images/signin-up/signin.svg" alt="" /></div>
                 <div class="formBx">
-                    <form action="" onsubmit="return false;">
+
+                    <form method="POST" action="{{ route('login') }}">
                         <h2>Sign In</h2>
-                        <input type="text" name="" placeholder="Username" />
+                        @csrf
+
+
+                        <input id="email" type="email" class=" @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                            placeholder="Email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+
+
 
                         <div class="show-hide">
-                            <input type="password" name="password" id="passwordInput" placeholder="Password" />
+                            <input type="password" class="@error('password') is-invalid @enderror"
+                                name="password" required autocomplete="current-password" placeholder="Password"
+                                id="passwordInput">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <span class="icon-show-hide" id="togglePassword"
                                 onclick="togglePasswordVisibility('passwordInput', 'showPassword', 'hidePassword')">
                                 <!-- Initially show.svg is displayed -->
@@ -210,7 +231,6 @@
 
                             </span>
                         </div>
-
 
                         <input type="submit" name="" value="Login" />
                         <p class="signup">
