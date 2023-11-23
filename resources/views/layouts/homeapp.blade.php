@@ -19,9 +19,9 @@
 
 <body>
 
-    <div style="background-color: #0b20e9;">
+    <div>
         {{-- Navbar --}}
-        @include('includes.homenavbar')
+        {{-- @include('includes.homenavbar') --}}
 
 
 

@@ -20,7 +20,7 @@
 <body>
 
     {{-- Navbar --}}
-    @include('includes.navbar')
+    {{-- @include('includes.navbar') --}}
 
 
 

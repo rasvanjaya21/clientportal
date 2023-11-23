@@ -112,9 +112,17 @@
                                     <p class="p-contact mb-3">
                                         Selamat datang di Portal Client Webcare Indonesia
                                     </p>
-                                    <a href="/details/comments/{{ $client->slug }}"
+                                    {{-- <a href="/details/comments/{{ $client->slug }}"
                                         class="text-white font-contact btn-contact btn btn-primary py-2 px-lg-3">
                                         Comments
+                                    </a> --}}
+                                    <a href="https://api.whatsapp.com/send/?phone=6285736426304&text=Halo+Kak+admin+Webcare+Indonesia%0D%0A%0D%0ASaya+mau+tanya+mengenai+Portal+Client+di+Webcare.idn&type=phone_number&app_absent=0"
+                                        target="_blank">
+
+                                        <button type="button"
+                                            class="text-white font-contact btn-contact btn btn-primary py-2 px-lg-3">
+                                            Contact Admin
+                                        </button>
                                     </a>
 
                                 </div>
