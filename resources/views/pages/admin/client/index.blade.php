@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card shadow border-0 p-3" style="border-radius: 20px; max-width:70vw;">
+            <div class="card shadow border-0 p-3" style="border-radius: 20px; max-width:100vw;">
                 <div class="card-body">
                     <a href="{{ route('client.create') }}" class="btn btn-primary mb-3">
                         + Tambah Klien Baru
