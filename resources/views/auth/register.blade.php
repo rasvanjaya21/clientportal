@@ -198,20 +198,21 @@
                             @enderror
 
                             <span class="icon-show-hide" id="togglePasswordRegCre"
-                                onclick="togglePasswordVisibility('passwordInputRegCre', 'showPasswordRegCre', 'hidePasswordRegCre')">
-
-                                <!-- Initially show.svg is displayed -->
+                                onclick="togglePasswordVisibility(passwordInputId='passwordInputRegCre', showPasswordIconId='showPasswordRegCre', hidePasswordIconId='hidePasswordRegCre')">
+                                
+                                <!-- Initially hide.svg is displayed -->
                                 <svg class="icon-show" id="hidePasswordRegCre" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z" />
-                                </svg>
-
-                                <!-- Initially hide.svg is hidden -->
-                                <svg class="icon-hide" id="showPasswordRegCre" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20" style="display:none">
+                                    viewBox="0 0 20 20">
                                     <path
                                         d="m12.81 4.36l-1.77 1.78a4 4 0 0 0-4.9 4.9l-2.76 2.75C2.06 12.79.96 11.49.2 10a11 11 0 0 1 12.6-5.64zm3.8 1.85c1.33 1 2.43 2.3 3.2 3.79a11 11 0 0 1-12.62 5.64l1.77-1.78a4 4 0 0 0 4.9-4.9l2.76-2.75zm-.25-3.99l1.42 1.42L3.64 17.78l-1.42-1.42L16.36 2.22z" />
+
+                                </svg>
+
+                                <!-- Initially show.svg is hidden -->
+                                <svg class="icon-hide" id="showPasswordRegCre" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" style="display:none">
+                                    <path
+                                        d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z" />
                                 </svg>
                             </span>
                         </div>
@@ -220,19 +221,19 @@
                             <input placeholder="Confirm Password" type="password" name="password_confirmation" required
                                 autocomplete="new-password" id="passwordInputReg">
                             <span class="icon-show-hide" id="togglePasswordReg"
-                                onclick="togglePasswordVisibility('passwordInputReg', 'showPasswordReg', 'hidePasswordReg')">
-                                <!-- Initially show.svg is displayed -->
+                                onclick="togglePasswordVisibility(passwordInputId='passwordInputReg', showPasswordIconId='showPasswordReg', hidePasswordIconId='hidePasswordReg')">
+                                <!-- Initially hide.svg is displayed -->
                                 <svg class="icon-show" id="hidePasswordReg" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z" />
-                                </svg>
-
-                                <!-- Initially hide.svg is hidden -->
-                                <svg class="icon-hide" id="showPasswordReg" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20" style="display:none">
+                                    viewBox="0 0 20 20">
                                     <path
                                         d="m12.81 4.36l-1.77 1.78a4 4 0 0 0-4.9 4.9l-2.76 2.75C2.06 12.79.96 11.49.2 10a11 11 0 0 1 12.6-5.64zm3.8 1.85c1.33 1 2.43 2.3 3.2 3.79a11 11 0 0 1-12.62 5.64l1.77-1.78a4 4 0 0 0 4.9-4.9l2.76-2.75zm-.25-3.99l1.42 1.42L3.64 17.78l-1.42-1.42L16.36 2.22z" />
+                                </svg>
+
+                                <!-- Initially show.svg is hidden -->
+                                <svg class="icon-hide" id="showPasswordReg" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" style="display:none">
+                                    <path
+                                        d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z" />
                                 </svg>
                             </span>
                         </div>
