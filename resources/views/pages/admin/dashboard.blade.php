@@ -196,7 +196,7 @@
                                         {{ $recentclients->name }}
                                     </div>
                                     <div class="section-right-2 my-auto text-right  text-muted ">
-                                        {{ \Carbon\Carbon::parse($noti->created_at)->diffForHumans() }}
+                                        {{ \Carbon\Carbon::parse($recentclients->created_at)->diffForHumans() }}
                                     </div>
                                 </div>
                                 <div class="font-weight-bold mt-2">Slug : <a href="/details/{{ $recentclients->slug }}"
