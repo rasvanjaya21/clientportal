@@ -5,7 +5,8 @@
  <script>
      AOS.init();
  </script>
- <script src="/vendor/vue/vue.js"></script>
+ {{-- <script src="/vendor/vue/vue.js"></script> --}}
 
  <script src="/script/navbar-scroll.js"></script>
  <script src="/script/signinup.js"></script>
+ <script src="/script/404.js"></script>
