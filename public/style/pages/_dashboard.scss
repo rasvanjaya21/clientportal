@@ -5,11 +5,17 @@ $sidebarHoverMenu: #0560fd;
 $hoversideBarMenu: #ffffff;
 
 .page-dashboard {
-  #page-content-wrapper {
-    background: #f5f5fb;
-    min-width: 100vw;
-  }
 
+
+  //reponsive
+  #wrapper {
+    &.toggled {
+      #sidebar-wrapper {
+        margin-left: 0;
+      }
+    }
+  }
+  
   .width-logo {
     width: 50px;
   }
@@ -35,13 +41,7 @@ $hoversideBarMenu: #ffffff;
     margin-left: 5px;
   }
 
-  #wrapper {
-    &.toggled {
-      #sidebar-wrapper {
-        margin-left: 0;
-      }
-    }
-  }
+ 
 
   .navbar-store {
     margin-top: 0;
@@ -211,12 +211,12 @@ $color-three: #b3b3ff;
 }
 
 .card-important {
-  border: 1px solid $color-three;
-  margin-bottom: 20px;
   border-radius: 0.8rem;
   
   .card-title {
     border-bottom: solid 1.5px #eeeeee;
+    background-color: #0560fd; 
+    border-radius: 10px 10px 0px 0px;
     .m-0.font-weight-bolder {
       font-size: 16px;
       color: #000000;

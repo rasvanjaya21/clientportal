@@ -9871,9 +9871,8 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5);
 }
 
-.page-dashboard #page-content-wrapper {
-  background: #f5f5fb;
-  min-width: 100vw;
+.page-dashboard #wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
 }
 .page-dashboard .width-logo {
   width: 50px;
@@ -9895,9 +9894,6 @@ body {
   font-size: 20px;
   color: #ffffff;
   margin-left: 5px;
-}
-.page-dashboard #wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
 }
 .page-dashboard .navbar-store {
   margin-top: 0;
@@ -10041,12 +10037,12 @@ body {
 }
 
 .card-important {
-  border: 1px solid #b3b3ff;
-  margin-bottom: 20px;
   border-radius: 0.8rem;
 }
 .card-important .card-title {
   border-bottom: solid 1.5px #eeeeee;
+  background-color: #0560fd;
+  border-radius: 10px 10px 0px 0px;
 }
 .card-important .card-title .m-0.font-weight-bolder {
   font-size: 16px;
@@ -10352,25 +10348,21 @@ body {
   flex-direction: column;
   font-size: 1em;
 }
-
-.h1-404 {
+.size-404 .h1-404 {
   font-size: 7.5em;
   margin: 15px 0px;
   font-weight: bold;
 }
-
-.h2-404 {
+.size-404 .h2-404 {
   font-weight: bold;
 }
-
-.svg-404 {
+.size-404 .svg-404 {
   width: 310px;
 }
-
-.btn-404 {
+.size-404 .btn-404 {
   z-index: 1;
   overflow: hidden;
-  background: transparent;
+  background: #0560fd;
   position: relative;
   padding: 8px 50px;
   border-radius: 30px;
@@ -10381,38 +10373,50 @@ body {
   font-weight: bold;
   margin: 5px 0px;
 }
-.btn-404.dark {
-  border: 4px solid #0b20e9;
-  color: #0e0620;
+.size-404 .btn-404.dark {
+  border: 4px solid #0560fd;
+  color: #ffffff;
 }
-.btn-404.dark:before {
+.size-404 .btn-404.dark:before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 0%;
   height: 100%;
-  background: #0b20e9;
+  background: #ffffff;
   z-index: -1;
   transition: 0.2s ease;
 }
-.btn-404.dark:hover {
-  color: #ffffff;
-  background: #0b20e9;
+.size-404 .btn-404.dark:hover {
+  color: #0e0620;
+  background: transparent;
   transition: 0.2s ease;
 }
-.btn-404.dark:hover:before {
+.size-404 .btn-404.dark:hover:before {
   width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  .body-404 {
+  .size-404 {
     display: block;
     height: 0vh;
   }
-  .container {
+  .size-404 .container {
     margin-top: 50px;
     margin-bottom: 70px;
+  }
+  .size-404 .container .svg-404 {
+    display: flex;
+    margin: 0 auto;
+  }
+  .size-404 .container .h1-404,
+  .size-404 .container .h2-404,
+  .size-404 .container .p-404,
+  .size-404 .container .a-404 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 }
 .store-breadcrumbs .breadcrumb {
